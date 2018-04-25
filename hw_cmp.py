@@ -251,12 +251,16 @@ def grab_data(args):
 
     Return dict of files
     '''
-    cmd = "for fn in `openstack baremetal node list | awk -F \
-    '|' \ '{print $3}' | grep -v Name`; do openstack baremetal \
-    introspection data save '$fn' | jq '.' > '/tmp/$fn.json'; done"
+    # cmd = "for fn in `openstack baremetal node list | awk -F \
+    # '|' '{print $3}' | grep -v Name`; do openstack baremetal \
+    # introspection data save \"$fn\" | jq '.' > '/tmp/$fn.json'; done"
 
+    # cmd = "for fn in `openstack baremetal node list | awk -F '|' \
+    # '{print $3}' | grep -v Name`; do openstack baremetal \
+    # introspection data save \"$fn\" | jq '.' > \"/tmp/$fn.json\"; done"
+
+    cmd = '''for fn in `openstack baremetal node list | awk -F '|' '{print $3}' | grep -v Name`; do openstack baremetal introspection data save "$fn" | jq '.' > "$fn.json"; done'''
     run_shell(args, cmd)
-
     results = []
     folder = '/tmp'
 
