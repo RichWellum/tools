@@ -57,9 +57,9 @@ def parse_args():
         epilog='E.g.: hw_cmp file1.json files2.json\n')
 
     parser.add_argument('file', type=argparse.FileType('r'), nargs='+')
-    parser.add_argument('-f', '--filter', type=str, default='None',
+    parser.add_argument('-f', '--filter', type=str, default='manufacturer',
                         help='Sort filer, E.g: cpus, vendor, nic_num, '
-                        'disk_num')
+                        'disk_num. Default is "manufacturer"')
     parser.add_argument('-v', '--verbose', action='store_const',
                         const=logging.DEBUG, default=logging.INFO,
                         help='Turn on verbose messages')
