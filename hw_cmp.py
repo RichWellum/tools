@@ -327,8 +327,8 @@ def main():
     for file in args.file:
         total_list_num += 1
 
-    grab_data(args)
-    sys.exit(1)
+    # grab_data(args)
+    # sys.exit(1)
 
     # Store a list of dictionaries - each dict representing one inputed file
     global_list = []
