@@ -251,21 +251,14 @@ def grab_data(args):
 
     Return dict of files
     '''
-    # cmd = "for fn in `openstack baremetal node list | awk -F \
-    # '|' '{print $3}' | grep -v Name`; do openstack baremetal \
-    # introspection data save \"$fn\" | jq '.' > '/tmp/$fn.json'; done"
+    # cmd = "diff <(ssh -n root@10.22.254.34 cat /vms/cloudburst.qcow2.*) <(ssh -n root@10.22.254.101 cat /vms/cloudburst.qcow2)"
+    # output,error = subprocess.Popen(cmd, shell=True, executable="/bin/bash", stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
 
     cmd = "for fn in `openstack baremetal node list | awk -F '|' \
     '{print $3}' | grep -v Name`; do openstack baremetal \
-    introspection data save \"$fn\" | jq '.' > \"/tmp/$fn.json\"; done"
+    introspection data save $fn | jq '.' > /tmp/$fn.json; done"
 
-    cmd = "for fn in `openstack baremetal node list | awk -F '|' \
-    '{print $3}' | grep -v Name`; do echo $fn; done"
-
-    servers = []
-    servers = run_shell(args, cmd)
-    pp.pprint(servers)
-
+    run_shell(args, cmd)
     results = []
     folder = '/tmp'
 
