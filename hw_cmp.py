@@ -24,6 +24,7 @@ import json
 import argparse
 from argparse import RawDescriptionHelpFormatter
 import logging
+import re
 import sys
 import pprint
 from operator import itemgetter
@@ -56,10 +57,15 @@ def parse_args():
         epilog='E.g.: hw_cmp file1.json files2.json\n')
 
     parser.add_argument('file', type=argparse.FileType('r'), nargs='+')
+    parser.add_argument('-f', '--filter', type=str, default='None',
+                        help='Sort filer, E.g: cpus, vendor, nic_num, '
+                        'disk_num')
     parser.add_argument('-v', '--verbose', action='store_const',
                         const=logging.DEBUG, default=logging.INFO,
                         help='Turn on verbose messages')
-
+    parser.add_argument('-lk', '--list_keys', action='store_true',
+                        help='Dump all valid keys, to find something to '
+                        'filer "-f" on')
     return parser.parse_args()
 
 
@@ -190,7 +196,23 @@ def num_cpus(list):
                           sort_order_reverse))
 
 
-def analyse_data(list, sort_by_key):
+def check_all_keys(list, key):
+    '''Check entire list of dictionaries for a valid key'''
+    all_keys = set().union(*(d.keys() for d in list))
+    if not re.search(str(key), str(all_keys)):
+        print('Error: %s is not a valid key, use "-k" to see valid keys')
+        sys.exit(1)
+
+
+def list_all_keys(args, list):
+    '''List all valid keys'''
+    if args.list_keys:
+        all_keys = set().union(*(d.keys() for d in list))
+        pp.pprint(all_keys)
+        sys.exit(1)
+
+
+def analyse_data(args, list):
     '''Gather information from global list to categorize the hardware
 
     High level Groups:
@@ -202,21 +224,27 @@ def analyse_data(list, sort_by_key):
     Number of Disks
     '''
 
+    # Only runs if -lk is added
+    list_all_keys(args, list)
+
+    # Check that passed key filter is valid
+    check_all_keys(list, args.filter)
+
     header = ['Name', 'CPU', 'Disks Num', 'Memory Size',
               'NICS Num', 'Disk Size', 'Disk Vendor',
               'Product Name', 'Manufacturer']
+
     keys = ['file_name', 'cpus', 'disk_num', 'memory',
             'nic_num', 'size', 'vendor', 'product_name',
             'manufacturer']
 
-    banner('Server "%s" HW Analysis' % sort_by_key)
-    # sort_by_key = 'cpus'
+    banner('Server "%s" HW Analysis' % args.filter)
     sort_order_reverse = True
 
     print(format_as_table(list,
                           keys,
                           header,
-                          sort_by_key,
+                          args.filter,
                           sort_order_reverse))
 
 
@@ -366,10 +394,7 @@ def main():
         # This only prints if verbose is on
         print_global_list(args, global_list, total_list_num)
 
-        analyse_data(global_list, 'cpus')
-        analyse_data(global_list, 'vendor')
-        analyse_data(global_list, 'nic_num')
-        analyse_data(global_list, 'disk_num')
+        analyse_data(args, global_list)
 
     except Exception:
         print('Exception caught:')
