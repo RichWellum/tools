@@ -255,12 +255,17 @@ def grab_data(args):
     # '|' '{print $3}' | grep -v Name`; do openstack baremetal \
     # introspection data save \"$fn\" | jq '.' > '/tmp/$fn.json'; done"
 
-    # cmd = "for fn in `openstack baremetal node list | awk -F '|' \
-    # '{print $3}' | grep -v Name`; do openstack baremetal \
-    # introspection data save \"$fn\" | jq '.' > \"/tmp/$fn.json\"; done"
+    cmd = "for fn in `openstack baremetal node list | awk -F '|' \
+    '{print $3}' | grep -v Name`; do openstack baremetal \
+    introspection data save \"$fn\" | jq '.' > \"/tmp/$fn.json\"; done"
 
-    cmd = '''for fn in `openstack baremetal node list | awk -F '|' '{print $3}' | grep -v Name`; do openstack baremetal introspection data save "$fn" | jq '.' > "$fn.json"; done'''
-    run_shell(args, cmd)
+    cmd = "for fn in `openstack baremetal node list | awk -F '|' \
+    '{print $3}' | grep -v Name`; do echo $fn; done"
+
+    out = []
+    out.append = run_shell(args, cmd)
+    pp.print(out)
+
     results = []
     folder = '/tmp'
 
