@@ -262,9 +262,9 @@ def grab_data(args):
     cmd = "for fn in `openstack baremetal node list | awk -F '|' \
     '{print $3}' | grep -v Name`; do echo $fn; done"
 
-    out = []
-    out.append = run_shell(args, cmd)
-    pp.print(out)
+    servers = []
+    servers = run_shell(args, cmd)
+    pp.print(servers)
 
     results = []
     folder = '/tmp'
