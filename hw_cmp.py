@@ -264,7 +264,7 @@ def grab_data(args):
 
     servers = []
     servers = run_shell(args, cmd)
-    pp.print(servers)
+    pp.pprint(servers)
 
     results = []
     folder = '/tmp'
