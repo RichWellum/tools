@@ -13,21 +13,23 @@ compute, controller, storage.
 
 The data has been retrieved with:
 
-ironic node-list
+openstack baremetal node list
 openstack baremetal introspection data save server-1 | jq '.' > server-1.json
 
 TODO: Import common_ironic and use API, instead of files pulled independently
 '''
 
 from __future__ import print_function
-import json
 import argparse
 from argparse import RawDescriptionHelpFormatter
+import json
 import logging
-import re
-import sys
-import pprint
 from operator import itemgetter
+import os
+import pprint
+import re
+import subprocess
+import sys
 
 logger = logging.getLogger(__name__)
 
@@ -67,6 +69,32 @@ def parse_args():
                         help='Dump all valid keys, to find something to '
                         'filer "-f" on')
     return parser.parse_args()
+
+
+def run_shell(args, cmd):
+    '''Run a shell command and return the output
+
+    Print the output and errors if debug is enabled
+    Not using logger.debug as a bit noisy for this info
+    '''
+
+    p = subprocess.Popen(
+        cmd,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        shell=True)
+    out, err = p.communicate()
+
+    out = out.rstrip()
+    err = err.rstrip()
+
+    if args.verbose == 10:  # Hack - debug enabled
+        if str(out) is not '0' and str(out) is not '1' and out:
+            print("Shell STDOUT output: \n'%s'\n" % out)
+        if err:
+            print("Shell STDERR output: \n'%s'\n" % err)
+
+    return(out)
 
 
 def banner(description):
@@ -212,6 +240,33 @@ def list_all_keys(args, list):
         sys.exit(1)
 
 
+def grab_data(args):
+    '''Grab data from a server
+
+    openstack baremetal node list
+    openstack baremetal introspection data save server-1 \
+     | jq '.' > server-1.json
+
+    Results in a file of data for every Ironic Server found.
+
+    Return dict of files
+    '''
+    cmd = "for fn in `openstack baremetal node list | awk -F \
+    '|' \ '{print $3}' | grep -v Name`; do openstack baremetal \
+    introspection data save '$fn' | jq '.' > '/tmp/$fn.json'; done"
+
+    run_shell(args, cmd)
+
+    results = []
+    folder = '/tmp'
+
+    for f in os.listdir(folder):
+        if f.endswith('.json'):
+            results.append(f)
+
+    print(results)
+
+
 def analyse_data(args, list):
     '''Gather information from global list to categorize the hardware
 
@@ -269,6 +324,9 @@ def main():
     total_list_num = 0
     for file in args.file:
         total_list_num += 1
+
+    grab_data(args)
+    sys.exit(1)
 
     # Store a list of dictionaries - each dict representing one inputed file
     global_list = []
