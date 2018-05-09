@@ -33,7 +33,7 @@ import sys
 
 logger = logging.getLogger(__name__)
 
-pp = pprint.PrettyPrinter(indent=4)
+pp = pprint.PrettyPrinter(indent=2)
 
 
 def set_logging():
@@ -345,6 +345,60 @@ def ihavealist():
          'name': u'ens1f0',
          'numnic': '4',
          'product': u'0x10f8'},
+        {'bmc': u'192.168.117.184', 'cpu_arch': u'x86_64', 'numcpu': '100'},
+        {'bmc': u'192.168.117.184',
+         'product_name': u'ProLiant BL460c Gen33 (727021-B21)',
+         'product_vendor': u'IBM'},
+        {'bmc': u'192.168.117.184',
+         'disk_model': u'LOGICAL VOLUME',
+         'disk_name': u'/dev/sda',
+         'disk_vendor': u'HP',
+         'numdisk': 4,
+         'rotational': True,
+         'size': 900151926784},
+        {'bmc': u'192.168.117.184',
+         'disk_model': u'LOGICAL VOLUME',
+         'disk_name': u'/dev/sdb',
+         'disk_vendor': u'HP',
+         'numdisk': 4,
+         'rotational': True,
+         'size': 900151926784},
+        {'bmc': u'192.168.117.184', 'name': u'eno49', 'numa_node': 0},
+        {'bmc': u'192.168.117.184', 'name': u'eno50', 'numa_node': 0},
+        {'bmc': u'192.168.117.184', 'name': u'ens1f1', 'numa_node': 0},
+        {'bmc': u'192.168.117.184', 'name': u'ens1f0', 'numa_node': 0},
+        {'biosdevname': u'em49',
+         'bmc': u'192.168.117.184',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.65',
+         'name': u'eno49',
+         'numnic': '8',
+         'product': u'0x10f8'},
+        {'biosdevname': u'em50',
+         'bmc': u'192.168.117.184',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.12',
+         'name': u'eno50',
+         'numnic': '8',
+         'product': u'0x10f8'},
+        {'biosdevname': u'p1p2',
+         'bmc': u'192.168.117.184',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.11',
+         'name': u'ens1f1',
+         'numnic': '8',
+         'product': u'0x10f8'},
+        {'biosdevname': u'p1p1',
+         'bmc': u'192.168.117.184',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.10',
+         'name': u'ens1f0',
+         'numnic': '8',
+         'product': u'0x10f8'},
         {'bmc': u'192.168.117.178', 'cpu_arch': u'x86_64', 'numcpu': '24'},
         {'bmc': u'192.168.117.178',
          'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
@@ -512,44 +566,50 @@ def create_groups(list):
 
     group_keys = []
 
-    product_name = {}
-    bmc_list = []
+    pr_name = {}
     for dict in list:
         for key, value in dict.iteritems():
             if key == 'product_name':
-                product_name[key] = value
-                bmc_list.append(dict['bmc'])
-                product_name['bmc'] = unique(bmc_list)
-    group_keys.append(product_name)
+                key_ = '%s_%s' % (key, value)
+                if key_ in pr_name.keys():
+                    pr_name[key_].append(dict['bmc'])
+                else:
+                    pr_name[key_] = [dict['bmc']]
+    group_keys.append(pr_name)
 
-    product_vendor = {}
-    bmc_list = []
+    pr_vendor = {}
     for dict in list:
         for key, value in dict.iteritems():
             if key == 'product_vendor':
-                product_vendor[key] = value
-                bmc_list.append(dict['bmc'])
-                product_vendor['bmc'] = unique(bmc_list)
-    group_keys.append(product_vendor)
+                key_ = '%s_%s' % (key, value)
+                if key_ in pr_vendor.keys():
+                    pr_vendor[key_].append(dict['bmc'])
+                else:
+                    pr_vendor[key_] = [dict['bmc']]
+    group_keys.append(pr_vendor)
 
     numnic = {}
-    bmc_list = []
     for dict in list:
         for key, value in dict.iteritems():
             if key == 'numnic':
-                numnic[key] = value
-                bmc_list.append(dict['bmc'])
-                numnic['bmc'] = unique(bmc_list)
+                key_ = '%s_%s' % (key, value)
+                if key_ in numnic.keys():
+                    if dict['bmc'] not in numnic[key_]:
+                        numnic[key_].append(dict['bmc'])
+                else:
+                    numnic[key_] = [dict['bmc']]
     group_keys.append(numnic)
 
     numdisk = {}
-    bmc_list = []
     for dict in list:
         for key, value in dict.iteritems():
             if key == 'numdisk':
-                numdisk[key] = value
-                bmc_list.append(dict['bmc'])
-                numdisk['bmc'] = unique(bmc_list)
+                key_ = '%s_%s' % (key, value)
+                if key_ in numdisk.keys():
+                    if dict['bmc'] not in numdisk[key_]:
+                        numdisk[key_].append(dict['bmc'])
+                else:
+                    numdisk[key_] = [dict['bmc']]
     group_keys.append(numdisk)
 
     pp.pprint(group_keys)
