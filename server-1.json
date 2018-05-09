@@ -1,0 +1,1320 @@
+{
+  "cpu_arch": "x86_64",
+  "macs": [
+    "78:e7:d1:22:1f:08"
+  ],
+  "root_disk": {
+    "rotational": false,
+    "vendor": "ATA",
+    "name": "/dev/sda",
+    "wwn_vendor_extension": null,
+    "hctl": "0:0:0:0",
+    "wwn_with_extension": "0x5001b444a9678357",
+    "by_path": "/dev/disk/by-path/pci-0000:00:1f.2-ata-1.0",
+    "model": "SanDisk SDSSDA24",
+    "wwn": "0x5001b444a9678357",
+    "serial": "172321451204",
+    "size": 240057409536
+  },
+  "extra": {
+    "network": {
+      "enp5s0d1": {
+        "tx-udp_tnl-csum-segmentation": "off [fixed]",
+        "vlan-challenged": "off [fixed]",
+        "rx-vlan-offload": "on",
+        "tx-vlan-stag-hw-insert": "off [fixed]",
+        "rx-vlan-stag-filter": "on [fixed]",
+        "highdma": "on [fixed]",
+        "autonegotiation": "off",
+        "tx-gso-robust": "off [fixed]",
+        "tcp-segmentation-offload/tx-tcp-mangleid-segmentation": "off",
+        "netns-local": "off [fixed]",
+        "vendor": "Mellanox Technologies",
+        "serial": "78:e7:d1:22:1f:0e",
+        "tx-mpls-segmentation": "off [fixed]",
+        "l2-fwd-offload": "off [fixed]",
+        "latency": 0,
+        "tx-checksumming/tx-checksum-ipv6": "on",
+        "tx-gre-segmentation": "off [fixed]",
+        "tx-checksumming/tx-checksum-ipv4": "on",
+        "tx-fcoe-segmentation": "off [fixed]",
+        "tcp-segmentation-offload/tx-tcp-segmentation": "on",
+        "tcp-segmentation-offload": "on",
+        "Autonegotiate": "off",
+        "tx-udp_tnl-segmentation": "off [fixed]",
+        "RX": "on",
+        "firmware": "2.8.0",
+        "fcoe-mtu": "off [fixed]",
+        "tcp-segmentation-offload/tx-tcp-ecn-segmentation": "off [fixed]",
+        "large-receive-offload": "off [fixed]",
+        "tx-sctp-segmentation": "off [fixed]",
+        "tx-checksumming/tx-checksum-fcoe-crc": "off [fixed]",
+        "rx-vlan-stag-hw-parse": "on",
+        "businfo": "pci@0000:05:00.0",
+        "tx-vlan-offload": "on",
+        "product": "MT26438 [ConnectX VPI PCIe 2.0 5GT/s - IB QDR / 10GigE Virtualization+]",
+        "tx-nocache-copy": "off",
+        "udp-fragmentation-offload": "off [fixed]",
+        "tx-checksumming/tx-checksum-sctp": "off [fixed]",
+        "driver": "mlx4_en",
+        "tx-sit-segmentation": "off [fixed]",
+        "busy-poll": "off [fixed]",
+        "scatter-gather/tx-scatter-gather-fraglist": "off [fixed]",
+        "tx-checksumming/tx-checksum-ip-generic": "off [fixed]",
+        "link": "no",
+        "rx-all": "off [fixed]",
+        "tx-ipip-segmentation": "off [fixed]",
+        "tcp-segmentation-offload/tx-tcp6-segmentation": "on",
+        "rx-checksumming": "on",
+        "TX": "on",
+        "generic-segmentation-offload": "on",
+        "loopback": "off",
+        "tx-lockless": "off [fixed]",
+        "tx-checksumming": "on",
+        "ntuple-filters": "off [fixed]",
+        "rx-vlan-filter": "on [fixed]",
+        "tx-gre-csum-segmentation": "off [fixed]",
+        "tx-gso-partial": "off [fixed]",
+        "receive-hashing": "on",
+        "scatter-gather/tx-scatter-gather": "on",
+        "generic-receive-offload": "on",
+        "rx-fcs": "off [fixed]",
+        "scatter-gather": "on",
+        "hw-tc-offload": "off [fixed]"
+      },
+      "enp5s0": {
+        "tx-udp_tnl-csum-segmentation": "off [fixed]",
+        "vlan-challenged": "off [fixed]",
+        "firmware": "2.8.0",
+        "tx-vlan-stag-hw-insert": "off [fixed]",
+        "rx-vlan-stag-filter": "on [fixed]",
+        "highdma": "on [fixed]",
+        "autonegotiation": "off",
+        "tx-gso-robust": "off [fixed]",
+        "tcp-segmentation-offload/tx-tcp-mangleid-segmentation": "off",
+        "netns-local": "off [fixed]",
+        "scatter-gather/tx-scatter-gather-fraglist": "off [fixed]",
+        "serial": "78:e7:d1:22:1f:0d",
+        "tx-mpls-segmentation": "off [fixed]",
+        "l2-fwd-offload": "off [fixed]",
+        "large-receive-offload": "off [fixed]",
+        "tx-checksumming/tx-checksum-ipv6": "on",
+        "tx-checksumming/tx-checksum-ipv4": "on",
+        "tx-fcoe-segmentation": "off [fixed]",
+        "tcp-segmentation-offload/tx-tcp-segmentation": "on",
+        "tcp-segmentation-offload": "on",
+        "Autonegotiate": "off",
+        "tx-udp_tnl-segmentation": "off [fixed]",
+        "RX": "on",
+        "tx-gre-segmentation": "off [fixed]",
+        "fcoe-mtu": "off [fixed]",
+        "tcp-segmentation-offload/tx-tcp-ecn-segmentation": "off [fixed]",
+        "tx-sctp-segmentation": "off [fixed]",
+        "tx-checksumming/tx-checksum-fcoe-crc": "off [fixed]",
+        "rx-vlan-stag-hw-parse": "on",
+        "businfo": "pci@0000:05:00.0",
+        "tx-vlan-offload": "on",
+        "tx-checksumming": "on",
+        "tx-nocache-copy": "off",
+        "udp-fragmentation-offload": "off [fixed]",
+        "tx-checksumming/tx-checksum-sctp": "off [fixed]",
+        "driver": "mlx4_en",
+        "tx-sit-segmentation": "off [fixed]",
+        "busy-poll": "off [fixed]",
+        "rx-vlan-offload": "on",
+        "tx-checksumming/tx-checksum-ip-generic": "off [fixed]",
+        "link": "no",
+        "rx-all": "off [fixed]",
+        "tx-ipip-segmentation": "off [fixed]",
+        "tcp-segmentation-offload/tx-tcp6-segmentation": "on",
+        "rx-checksumming": "on",
+        "TX": "on",
+        "generic-segmentation-offload": "on",
+        "loopback": "off",
+        "tx-lockless": "off [fixed]",
+        "ntuple-filters": "off [fixed]",
+        "rx-vlan-filter": "on [fixed]",
+        "tx-gre-csum-segmentation": "off [fixed]",
+        "tx-gso-partial": "off [fixed]",
+        "receive-hashing": "on",
+        "scatter-gather/tx-scatter-gather": "on",
+        "generic-receive-offload": "on",
+        "rx-fcs": "off [fixed]",
+        "scatter-gather": "on",
+        "hw-tc-offload": "off [fixed]"
+      },
+      "enp4s0f0": {
+        "tx-udp_tnl-csum-segmentation": "on",
+        "vlan-challenged": "off [fixed]",
+        "rx-vlan-offload": "on",
+        "ipv4-network": "172.31.0.0",
+        "rx-vlan-stag-filter": "off [fixed]",
+        "highdma": "on [fixed]",
+        "autonegotiation": "on",
+        "tx-gso-robust": "off [fixed]",
+        "tcp-segmentation-offload/tx-tcp-mangleid-segmentation": "off",
+        "netns-local": "off [fixed]",
+        "vendor": "Intel Corporation",
+        "serial": "78:e7:d1:22:1f:08",
+        "speed": "1Gbit/s",
+        "tx-mpls-segmentation": "off [fixed]",
+        "size": 1000000000,
+        "l2-fwd-offload": "off [fixed]",
+        "latency": 0,
+        "tx-checksumming/tx-checksum-ipv6": "off [fixed]",
+        "tx-gre-segmentation": "on",
+        "TX": "off",
+        "ipv4-netmask": "255.255.248.0",
+        "duplex": "full",
+        "tcp-segmentation-offload": "on",
+        "Autonegotiate": "on",
+        "tx-udp_tnl-segmentation": "on",
+        "RX": "on",
+        "firmware": "1.8.2",
+        "fcoe-mtu": "off [fixed]",
+        "tcp-segmentation-offload/tx-tcp-ecn-segmentation": "off [fixed]",
+        "large-receive-offload": "off [fixed]",
+        "tx-sctp-segmentation": "off [fixed]",
+        "tx-checksumming/tx-checksum-fcoe-crc": "off [fixed]",
+        "ipv4": "172.31.4.1",
+        "tx-gso-partial": "on",
+        "ipv4-cidr": 21,
+        "rx-vlan-stag-hw-parse": "off [fixed]",
+        "tx-vlan-offload": "on",
+        "product": "82576 Gigabit Network Connection",
+        "tx-nocache-copy": "off",
+        "udp-fragmentation-offload": "off [fixed]",
+        "tx-checksumming/tx-checksum-sctp": "on",
+        "driver": "igb",
+        "tx-sit-segmentation": "on",
+        "busy-poll": "off [fixed]",
+        "scatter-gather/tx-scatter-gather": "on",
+        "tx-checksumming/tx-checksum-ip-generic": "on",
+        "tx-vlan-stag-hw-insert": "off [fixed]",
+        "loopback": "off [fixed]",
+        "rx-all": "off",
+        "tx-ipip-segmentation": "on",
+        "tcp-segmentation-offload/tx-tcp6-segmentation": "on",
+        "rx-checksumming": "on",
+        "tcp-segmentation-offload/tx-tcp-segmentation": "on",
+        "generic-receive-offload": "on",
+        "tx-checksumming/tx-checksum-ipv4": "off [fixed]",
+        "generic-segmentation-offload": "on",
+        "tx-fcoe-segmentation": "off [fixed]",
+        "tx-lockless": "off [fixed]",
+        "tx-checksumming": "on",
+        "ntuple-filters": "off [fixed]",
+        "rx-vlan-filter": "on [fixed]",
+        "tx-gre-csum-segmentation": "on",
+        "businfo": "pci@0000:04:00.0",
+        "receive-hashing": "on",
+        "scatter-gather/tx-scatter-gather-fraglist": "off [fixed]",
+        "link": "yes",
+        "rx-fcs": "off [fixed]",
+        "scatter-gather": "on",
+        "hw-tc-offload": "off [fixed]"
+      },
+      "enp4s0f1": {
+        "tx-udp_tnl-csum-segmentation": "on",
+        "vlan-challenged": "off [fixed]",
+        "rx-vlan-offload": "on",
+        "ipv4-network": "172.31.0.0",
+        "rx-vlan-stag-filter": "off [fixed]",
+        "highdma": "on [fixed]",
+        "autonegotiation": "on",
+        "tx-gso-robust": "off [fixed]",
+        "tcp-segmentation-offload/tx-tcp-mangleid-segmentation": "off",
+        "netns-local": "off [fixed]",
+        "vendor": "Intel Corporation",
+        "serial": "78:e7:d1:22:1f:09",
+        "speed": "100Mbit/s",
+        "tx-mpls-segmentation": "off [fixed]",
+        "size": 100000000,
+        "l2-fwd-offload": "off [fixed]",
+        "latency": 0,
+        "tx-checksumming/tx-checksum-ipv6": "off [fixed]",
+        "tx-gre-segmentation": "on",
+        "TX": "off",
+        "ipv4-netmask": "255.255.248.0",
+        "duplex": "full",
+        "tcp-segmentation-offload": "on",
+        "Autonegotiate": "on",
+        "tx-udp_tnl-segmentation": "on",
+        "RX": "on",
+        "firmware": "1.8.2",
+        "fcoe-mtu": "off [fixed]",
+        "tcp-segmentation-offload/tx-tcp-ecn-segmentation": "off [fixed]",
+        "large-receive-offload": "off [fixed]",
+        "tx-sctp-segmentation": "off [fixed]",
+        "tx-checksumming/tx-checksum-fcoe-crc": "off [fixed]",
+        "ipv4": "172.31.4.3",
+        "tx-gso-partial": "on",
+        "ipv4-cidr": 21,
+        "rx-vlan-stag-hw-parse": "off [fixed]",
+        "tx-vlan-offload": "on",
+        "product": "82576 Gigabit Network Connection",
+        "tx-nocache-copy": "off",
+        "udp-fragmentation-offload": "off [fixed]",
+        "tx-checksumming/tx-checksum-sctp": "on",
+        "driver": "igb",
+        "tx-sit-segmentation": "on",
+        "busy-poll": "off [fixed]",
+        "scatter-gather/tx-scatter-gather": "on",
+        "tx-checksumming/tx-checksum-ip-generic": "on",
+        "tx-vlan-stag-hw-insert": "off [fixed]",
+        "loopback": "off [fixed]",
+        "rx-all": "off",
+        "tx-ipip-segmentation": "on",
+        "tcp-segmentation-offload/tx-tcp6-segmentation": "on",
+        "rx-checksumming": "on",
+        "tcp-segmentation-offload/tx-tcp-segmentation": "on",
+        "generic-receive-offload": "on",
+        "tx-checksumming/tx-checksum-ipv4": "off [fixed]",
+        "generic-segmentation-offload": "on",
+        "tx-fcoe-segmentation": "off [fixed]",
+        "tx-lockless": "off [fixed]",
+        "tx-checksumming": "on",
+        "ntuple-filters": "off [fixed]",
+        "rx-vlan-filter": "on [fixed]",
+        "tx-gre-csum-segmentation": "on",
+        "businfo": "pci@0000:04:00.1",
+        "receive-hashing": "on",
+        "scatter-gather/tx-scatter-gather-fraglist": "off [fixed]",
+        "link": "yes",
+        "rx-fcs": "off [fixed]",
+        "scatter-gather": "on",
+        "hw-tc-offload": "off [fixed]"
+      }
+    },
+    "ipmi": {
+      "Temp 1": {
+        "value": 20,
+        "unit": "degrees C"
+      },
+      "Temp 6 (HDDM)": {
+        "value": "disabled"
+      },
+      "Ext. Health LED": {
+        "value": "0x00"
+      },
+      "Fan 16": {
+        "value": "20.78",
+        "unit": "percent"
+      },
+      "Temp 11 (PCIR)": {
+        "value": 42,
+        "unit": "degrees C"
+      },
+      "Fans": {
+        "value": 0,
+        "unit": "percent"
+      },
+      "Temp 5 (MemD2)": {
+        "value": 42,
+        "unit": "degrees C"
+      },
+      "Memory": {
+        "value": "0x00"
+      },
+      "Power Supply 4": {
+        "value": 1200,
+        "unit": "Watts"
+      },
+      "Power Supply 2": {
+        "value": 1200,
+        "unit": "Watts"
+      },
+      "Power Supply 3": {
+        "value": 1200,
+        "unit": "Watts"
+      },
+      "Power Supply 1": {
+        "value": 1200,
+        "unit": "Watts"
+      },
+      "Temp 18 (GPU1)": {
+        "value": "disabled"
+      },
+      "Temp 15 (IOH2)": {
+        "value": 0,
+        "unit": "degrees C"
+      },
+      "Temp 7 (IIOH)": {
+        "value": 82,
+        "unit": "degrees C"
+      },
+      "Temp 14 (PCIR)": {
+        "value": 42,
+        "unit": "degrees C"
+      },
+      "Temp 9 (PCIR)": {
+        "value": 41,
+        "unit": "degrees C"
+      },
+      "Temp 8 (PCIR)": {
+        "value": 39,
+        "unit": "degrees C"
+      },
+      "Fan 8": {
+        "value": "20.78",
+        "unit": "percent"
+      },
+      "Int. Health LED": {
+        "value": "0x00"
+      },
+      "Temp 17 (GPU3)": {
+        "value": "disabled"
+      },
+      "Fan 15": {
+        "value": "20.78",
+        "unit": "percent"
+      },
+      "Temp 3 (CPU 2)": {
+        "value": 40,
+        "unit": "degrees C"
+      },
+      "Temp 12 (PCIR)": {
+        "value": 46,
+        "unit": "degrees C"
+      },
+      "Fan 7": {
+        "value": "20.78",
+        "unit": "percent"
+      },
+      "lan": {
+        "802.1q-vlan-id": "Disabled",
+        "802.1q-vlan-priority": 0,
+        "default-gateway-ip": "192.168.112.1",
+        "set-in-progress": "Set Complete",
+        "rmcp+-cipher-suites": "0,1,2,3",
+        "ip-address-source": "DHCP Address",
+        "bmc-arp-control": "ARP Responses Enabled, Gratuitous ARP Disabled",
+        "auth-type-enable": "Callback :",
+        "bad-password-threshold": "Not Available",
+        "ip-address": "192.168.116.106",
+        "cipher-suite-priv-max": "XuuaXXXXXXXXXXX",
+        "mac-address": "78:e7:d1:22:1f:0a",
+        "subnet-mask": "255.255.240.0"
+      },
+      "Temp 13 (PCIR)": {
+        "value": 40,
+        "unit": "degrees C"
+      },
+      "UID Light": {
+        "value": "0x00"
+      },
+      "Temp 4 (MemD1)": {
+        "value": 45,
+        "unit": "degrees C"
+      },
+      "Temp 2 (CPU 1)": {
+        "value": 40,
+        "unit": "degrees C"
+      },
+      "VRM 1": {
+        "value": "0x00"
+      },
+      "VRM 2": {
+        "value": "0x00"
+      },
+      "Temp 16 (GPU2)": {
+        "value": "disabled"
+      },
+      "Temp 10 (PCIR)": {
+        "value": 31,
+        "unit": "degrees C"
+      }
+    },
+    "firmware": {
+      "bios": {
+        "date": "08/16/2015",
+        "version": "P69",
+        "vendor": "HP"
+      }
+    },
+    "system": {
+      "motherboard": {
+        "serial": "CZ3142XKW5",
+        "vendor": "HP"
+      },
+      "kernel": {
+        "cmdline": "ipa-inspection-callback-url=http://172.31.0.1:5050/v1/continue ipa-inspection-collectors=default,extra-hardware,numa-topology,logs systemd.journald.forward_to_console=yes BOOTIF=78:e7:d1:22:1f:08 ipa-inspection-dhcp-all-interfaces=1 ipa-collect-lldp=1 initrd=agent.ramdisk",
+        "version": "3.10.0-693.21.1.el7.x86_64",
+        "arch": "x86_64"
+      },
+      "product": {
+        "serial": "CZ3142XKW5",
+        "vendor": "HP",
+        "name": "ProLiant SL390s G7 (605078-B21)",
+        "uuid": "30353036-3837-5A43-3331-3432584B5735"
+      },
+      "ipmi": {
+        "channel": 2
+      }
+    },
+    "memory": {
+      "bank:8": {
+        "slot": "PROC 2 DIMM 3E",
+        "size": 8589934592,
+        "description": "DIMM DDR3 Synchronous 1333 MHz (0.8 ns)",
+        "clock": 1333000000
+      },
+      "bank:9": {
+        "slot": "PROC 2 DIMM 4B",
+        "size": 8589934592,
+        "description": "DIMM DDR3 Synchronous 1333 MHz (0.8 ns)",
+        "clock": 1333000000
+      },
+      "bank:2": {
+        "slot": "PROC 1 DIMM 3E",
+        "size": 8589934592,
+        "description": "DIMM DDR3 Synchronous 1333 MHz (0.8 ns)",
+        "clock": 1333000000
+      },
+      "bank:3": {
+        "slot": "PROC 1 DIMM 4B",
+        "size": 8589934592,
+        "description": "DIMM DDR3 Synchronous 1333 MHz (0.8 ns)",
+        "clock": 1333000000
+      },
+      "bank:0": {
+        "slot": "PROC 1 DIMM 1F",
+        "size": 8589934592,
+        "description": "DIMM DDR3 Synchronous 1333 MHz (0.8 ns)",
+        "clock": 1333000000
+      },
+      "bank:1": {
+        "slot": "PROC 1 DIMM 2C",
+        "size": 8589934592,
+        "description": "DIMM DDR3 Synchronous 1333 MHz (0.8 ns)",
+        "clock": 1333000000
+      },
+      "bank:6": {
+        "slot": "PROC 2 DIMM 1F",
+        "size": 8589934592,
+        "description": "DIMM DDR3 Synchronous 1333 MHz (0.8 ns)",
+        "clock": 1333000000
+      },
+      "bank:7": {
+        "slot": "PROC 2 DIMM 2C",
+        "size": 8589934592,
+        "description": "DIMM DDR3 Synchronous 1333 MHz (0.8 ns)",
+        "clock": 1333000000
+      },
+      "bank:4": {
+        "slot": "PROC 1 DIMM 5D",
+        "size": 8589934592,
+        "description": "DIMM DDR3 Synchronous 1333 MHz (0.8 ns)",
+        "clock": 1333000000
+      },
+      "bank:5": {
+        "slot": "PROC 1 DIMM 6A",
+        "size": 8589934592,
+        "description": "DIMM DDR3 Synchronous 1333 MHz (0.8 ns)",
+        "clock": 1333000000
+      },
+      "bank:10": {
+        "slot": "PROC 2 DIMM 5D",
+        "size": 8589934592,
+        "description": "DIMM DDR3 Synchronous 1333 MHz (0.8 ns)",
+        "clock": 1333000000
+      },
+      "bank:11": {
+        "slot": "PROC 2 DIMM 6A",
+        "size": 8589934592,
+        "description": "DIMM DDR3 Synchronous 1333 MHz (0.8 ns)",
+        "clock": 1333000000
+      },
+      "banks": {
+        "count": 12
+      },
+      "total": {
+        "size": 103079215104
+      }
+    },
+    "disk": {
+      "logical": {
+        "count": 2
+      },
+      "sda": {
+        "SMART/Program_Fail_Count(171)/worst": 100,
+        "SMART/Program_Fail_Count(171)/raw": 0,
+        "SMART/Command_Timeout(188)/raw": 0,
+        "SMART/Program_Fail_Count(171)/thresh": 0,
+        "SMART/Power_On_Hours_and_Msec(9)/raw": " 3861h+00m+00.000s",
+        "SMART/Power_Cycle_Count(12)/thresh": 0,
+        "SMART/Unknown_Attribute(244)/worst": 100,
+        "SMART/Power_On_Hours_and_Msec(9)/when_failed": "NEVER",
+        "SMART/Power_Cycle_Count(12)/worst": 100,
+        "SMART/Retired_Block_Count(5)/when_failed": "NEVER",
+        "SMART/firmware_version": "Z33130RL",
+        "SMART/Unknown_Attribute(169)/value": 100,
+        "SMART/Temperature_Celsius(194)/worst": 52,
+        "SMART/Available_Reservd_Space(232)/thresh": 4,
+        "SMART/Unexpect_Power_Loss_Ct(174)/when_failed": "NEVER",
+        "SMART/Lifetime_Reads_GiB(242)/value": 253,
+        "SMART/Power_On_Hours_and_Msec(9)/value": 0,
+        "SMART/SandForce_Internal(233)/worst": 100,
+        "SMART/Unknown_Attribute(169)/worst": 100,
+        "SMART/Power_Cycle_Count(12)/raw": 158,
+        "SMART/Reserve_Block_Count(170)/worst": 100,
+        "SMART/Unknown_Attribute(168)/worst": 100,
+        "SMART/Lifetime_Reads_GiB(242)/raw": 38,
+        "SMART/Unknown_Attribute(166)/worst": 100,
+        "SMART/Unknown_Attribute(168)/raw": 1,
+        "SMART/Lifetime_Writes_GiB(241)/value": 253,
+        "SMART/Lifetime_Reads_GiB(242)/when_failed": "NEVER",
+        "SMART/Available_Reservd_Space(232)/value": 100,
+        "SMART/Command_Timeout(188)/worst": 100,
+        "SMART/SandForce_Internal(233)/value": 100,
+        "SMART/Unknown_SandForce_Attr(173)/worst": 100,
+        "SMART/Unknown_Attribute(167)/thresh": 0,
+        "SMART/Reported_Uncorrect(187)/raw": 0,
+        "SMART/Temperature_Celsius(194)/raw": " 37 (0 48 0 0 0)",
+        "SMART/Unknown_Attribute(169)/thresh": 0,
+        "SMART/Life_Curve_Status(230)/thresh": 0,
+        "SMART/SandForce_Internal(234)/raw": 1954,
+        "SMART/Unknown_Attribute(165)/thresh": 0,
+        "SMART/Unknown_SandForce_Attr(173)/thresh": 0,
+        "SMART/Command_Timeout(188)/when_failed": "NEVER",
+        "SMART/Unknown_Attribute(167)/value": 100,
+        "SMART/Power_On_Hours_and_Msec(9)/worst": 100,
+        "SMART/Unknown_SandForce_Attr(173)/value": 100,
+        "SMART/Program_Fail_Count(171)/when_failed": "NEVER",
+        "SMART/SandForce_Internal(233)/thresh": 0,
+        "SMART/Reported_Uncorrect(187)/value": 100,
+        "rev": "30RL",
+        "SMART/Unknown_Attribute(167)/when_failed": "NEVER",
+        "SMART/Life_Curve_Status(230)/raw": 296353464389,
+        "SMART/Reserve_Block_Count(170)/when_failed": "NEVER",
+        "SMART/Erase_Fail_Count(172)/worst": 100,
+        "SMART/Reported_Uncorrect(187)/thresh": 0,
+        "SMART/Erase_Fail_Count(172)/value": 100,
+        "SMART/Unknown_Attribute(244)/value": 0,
+        "SMART/Unknown_Attribute(165)/value": 100,
+        "SMART/Erase_Fail_Count(172)/when_failed": "NEVER",
+        "SMART/Unknown_Attribute(169)/raw": 0,
+        "SMART/Unknown_Attribute(167)/worst": 100,
+        "SMART/SandForce_Internal(233)/when_failed": "NEVER",
+        "SMART/SandForce_Internal(234)/thresh": 0,
+        "SMART/Retired_Block_Count(5)/worst": 100,
+        "SMART/Unexpect_Power_Loss_Ct(174)/thresh": 0,
+        "SMART/Unknown_Attribute(165)/when_failed": "NEVER",
+        "SMART/Unknown_Attribute(166)/value": 100,
+        "SMART/Temperature_Celsius(194)/value": 63,
+        "SMART/Command_Timeout(188)/value": 100,
+        "SMART/Unexpect_Power_Loss_Ct(174)/worst": 100,
+        "SMART/Reported_Uncorrect(187)/worst": 100,
+        "SMART/Available_Reservd_Space(232)/worst": 100,
+        "optimal_io_size": 0,
+        "SMART/Power_On_Hours_and_Msec(9)/thresh": 0,
+        "SMART/Lifetime_Writes_GiB(241)/thresh": 0,
+        "SMART/Reserve_Block_Count(170)/raw": 0,
+        "SMART/SandForce_Internal(233)/raw": 193,
+        "size": 240,
+        "SMART/Unknown_Attribute(168)/thresh": 0,
+        "SMART/Command_Timeout(188)/thresh": 0,
+        "SMART/Retired_Block_Count(5)/raw": 0,
+        "SMART/Life_Curve_Status(230)/when_failed": "NEVER",
+        "SMART/Unexpect_Power_Loss_Ct(174)/value": 100,
+        "SMART/Retired_Block_Count(5)/thresh": 0,
+        "SMART/SATA_CRC_Error_Count(199)/thresh": 0,
+        "SMART/SATA_CRC_Error_Count(199)/raw": 0,
+        "SMART/serial_number": 172321451204,
+        "SMART/Reported_Uncorrect(187)/when_failed": "NEVER",
+        "SMART/Lifetime_Writes_GiB(241)/worst": 253,
+        "SMART/Lifetime_Reads_GiB(242)/thresh": 0,
+        "SMART/SandForce_Internal(234)/when_failed": "NEVER",
+        "SMART/Power_Cycle_Count(12)/value": 100,
+        "SMART/Life_Curve_Status(230)/value": 100,
+        "SMART/Unknown_Attribute(168)/when_failed": "NEVER",
+        "SMART/Unknown_Attribute(244)/raw": 0,
+        "rotational": 0,
+        "SMART/Unknown_SandForce_Attr(173)/when_failed": "NEVER",
+        "SMART/Reserve_Block_Count(170)/value": 100,
+        "Read Cache Disable": 0,
+        "wwn-id": "wwn-0x5001b444a9678357",
+        "SMART/Unknown_Attribute(168)/value": 100,
+        "SMART/Power_Cycle_Count(12)/when_failed": "NEVER",
+        "SMART/Temperature_Celsius(194)/when_failed": "NEVER",
+        "SMART/SATA_CRC_Error_Count(199)/worst": 100,
+        "SMART/Lifetime_Reads_GiB(242)/worst": 253,
+        "SMART/Retired_Block_Count(5)/value": 100,
+        "SMART/Unknown_Attribute(244)/when_failed": "NEVER",
+        "SMART/Unknown_SandForce_Attr(173)/raw": 0,
+        "SMART/SATA_CRC_Error_Count(199)/when_failed": "NEVER",
+        "SMART/Unknown_Attribute(166)/thresh": 0,
+        "SMART/Unknown_Attribute(166)/raw": 0,
+        "SMART/Reserve_Block_Count(170)/thresh": 0,
+        "SMART/Lifetime_Writes_GiB(241)/raw": 946,
+        "SMART/Unknown_Attribute(166)/when_failed": "NEVER",
+        "vendor": "ATA",
+        "id": "ata-SanDisk_SDSSDA240G_172321451204",
+        "SMART/Unknown_Attribute(165)/worst": 100,
+        "SMART/Life_Curve_Status(230)/worst": 100,
+        "SMART/device_model": "SanDisk SDSSDA240G",
+        "SMART/Lifetime_Writes_GiB(241)/when_failed": "NEVER",
+        "Write Cache Enable": 0,
+        "SMART/Unknown_Attribute(244)/thresh": 0,
+        "SMART/Unknown_Attribute(169)/when_failed": "NEVER",
+        "SMART/Available_Reservd_Space(232)/raw": 100,
+        "physical_block_size": 512,
+        "SMART/Program_Fail_Count(171)/value": 100,
+        "SMART/Erase_Fail_Count(172)/thresh": 0,
+        "SMART/SandForce_Internal(234)/worst": 100,
+        "SMART/Erase_Fail_Count(172)/raw": 0,
+        "SMART/Unknown_Attribute(167)/raw": 0,
+        "SMART/SATA_CRC_Error_Count(199)/value": 100,
+        "SMART/Unexpect_Power_Loss_Ct(174)/raw": 30,
+        "SMART/SandForce_Internal(234)/value": 100,
+        "SMART/Available_Reservd_Space(232)/when_failed": "NEVER",
+        "SMART/Temperature_Celsius(194)/thresh": 0,
+        "model": "SanDisk SDSSDA24",
+        "SMART/Unknown_Attribute(165)/raw": 120278679760
+      },
+      "sdb": {
+        "SMART/Program_Fail_Count(171)/worst": 100,
+        "SMART/Program_Fail_Count(171)/raw": 0,
+        "SMART/Command_Timeout(188)/raw": 0,
+        "SMART/Program_Fail_Count(171)/thresh": 0,
+        "SMART/Power_On_Hours_and_Msec(9)/raw": " 3863h+00m+00.000s",
+        "SMART/Power_Cycle_Count(12)/thresh": 0,
+        "SMART/Unknown_Attribute(244)/worst": 100,
+        "SMART/Power_On_Hours_and_Msec(9)/when_failed": "NEVER",
+        "SMART/Power_Cycle_Count(12)/worst": 100,
+        "SMART/Retired_Block_Count(5)/when_failed": "NEVER",
+        "SMART/firmware_version": "Z33130RL",
+        "SMART/Unknown_Attribute(169)/value": 100,
+        "SMART/Temperature_Celsius(194)/worst": 57,
+        "SMART/Available_Reservd_Space(232)/thresh": 4,
+        "SMART/Unexpect_Power_Loss_Ct(174)/when_failed": "NEVER",
+        "SMART/Lifetime_Reads_GiB(242)/value": 253,
+        "SMART/Power_On_Hours_and_Msec(9)/value": 0,
+        "SMART/SandForce_Internal(233)/worst": 100,
+        "SMART/Unknown_Attribute(169)/worst": 100,
+        "SMART/Power_Cycle_Count(12)/raw": 158,
+        "SMART/Reserve_Block_Count(170)/worst": 100,
+        "SMART/Unknown_Attribute(168)/worst": 100,
+        "SMART/Lifetime_Reads_GiB(242)/raw": 7,
+        "SMART/Unknown_Attribute(166)/worst": 100,
+        "SMART/Unknown_Attribute(168)/raw": 0,
+        "SMART/Lifetime_Writes_GiB(241)/value": 253,
+        "SMART/Lifetime_Reads_GiB(242)/when_failed": "NEVER",
+        "SMART/Available_Reservd_Space(232)/value": 100,
+        "SMART/Command_Timeout(188)/worst": 100,
+        "SMART/SandForce_Internal(233)/value": 100,
+        "SMART/Unknown_SandForce_Attr(173)/worst": 100,
+        "SMART/Unknown_Attribute(167)/thresh": 0,
+        "SMART/Reported_Uncorrect(187)/raw": 0,
+        "SMART/Temperature_Celsius(194)/raw": " 36 (0 43 0 0 0)",
+        "SMART/Unknown_Attribute(169)/thresh": 0,
+        "SMART/Life_Curve_Status(230)/thresh": 0,
+        "SMART/SandForce_Internal(234)/raw": 26,
+        "SMART/Unknown_Attribute(165)/thresh": 0,
+        "SMART/Unknown_SandForce_Attr(173)/thresh": 0,
+        "SMART/Command_Timeout(188)/when_failed": "NEVER",
+        "SMART/Unknown_Attribute(167)/value": 100,
+        "SMART/Power_On_Hours_and_Msec(9)/worst": 100,
+        "SMART/Unknown_SandForce_Attr(173)/value": 100,
+        "SMART/Program_Fail_Count(171)/when_failed": "NEVER",
+        "SMART/SandForce_Internal(233)/thresh": 0,
+        "SMART/Reported_Uncorrect(187)/value": 100,
+        "rev": "30RL",
+        "SMART/Unknown_Attribute(167)/when_failed": "NEVER",
+        "SMART/Life_Curve_Status(230)/raw": 0,
+        "SMART/Reserve_Block_Count(170)/when_failed": "NEVER",
+        "SMART/Erase_Fail_Count(172)/worst": 100,
+        "SMART/Reported_Uncorrect(187)/thresh": 0,
+        "SMART/Erase_Fail_Count(172)/value": 100,
+        "SMART/Unknown_Attribute(244)/value": 0,
+        "SMART/Unknown_Attribute(165)/value": 100,
+        "SMART/Erase_Fail_Count(172)/when_failed": "NEVER",
+        "SMART/Unknown_Attribute(169)/raw": 0,
+        "SMART/Unknown_Attribute(167)/worst": 100,
+        "SMART/SandForce_Internal(233)/when_failed": "NEVER",
+        "SMART/SandForce_Internal(234)/thresh": 0,
+        "SMART/Retired_Block_Count(5)/worst": 100,
+        "SMART/Unexpect_Power_Loss_Ct(174)/thresh": 0,
+        "SMART/Unknown_Attribute(165)/when_failed": "NEVER",
+        "SMART/Unknown_Attribute(166)/value": 100,
+        "SMART/Temperature_Celsius(194)/value": 64,
+        "SMART/Command_Timeout(188)/value": 100,
+        "SMART/Unexpect_Power_Loss_Ct(174)/worst": 100,
+        "SMART/Reported_Uncorrect(187)/worst": 100,
+        "SMART/Available_Reservd_Space(232)/worst": 100,
+        "optimal_io_size": 0,
+        "SMART/Power_On_Hours_and_Msec(9)/thresh": 0,
+        "SMART/Lifetime_Writes_GiB(241)/thresh": 0,
+        "SMART/Reserve_Block_Count(170)/raw": 0,
+        "SMART/SandForce_Internal(233)/raw": 0,
+        "size": 240,
+        "SMART/Unknown_Attribute(168)/thresh": 0,
+        "SMART/Command_Timeout(188)/thresh": 0,
+        "SMART/Retired_Block_Count(5)/raw": 0,
+        "SMART/Life_Curve_Status(230)/when_failed": "NEVER",
+        "SMART/Unexpect_Power_Loss_Ct(174)/value": 100,
+        "SMART/Retired_Block_Count(5)/thresh": 0,
+        "SMART/SATA_CRC_Error_Count(199)/thresh": 0,
+        "SMART/SATA_CRC_Error_Count(199)/raw": 0,
+        "SMART/serial_number": 172306466211,
+        "SMART/Reported_Uncorrect(187)/when_failed": "NEVER",
+        "SMART/Lifetime_Writes_GiB(241)/worst": 253,
+        "SMART/Lifetime_Reads_GiB(242)/thresh": 0,
+        "SMART/SandForce_Internal(234)/when_failed": "NEVER",
+        "SMART/Power_Cycle_Count(12)/value": 100,
+        "SMART/Life_Curve_Status(230)/value": 100,
+        "SMART/Unknown_Attribute(168)/when_failed": "NEVER",
+        "SMART/Unknown_Attribute(244)/raw": 0,
+        "rotational": 0,
+        "SMART/Unknown_SandForce_Attr(173)/when_failed": "NEVER",
+        "SMART/Reserve_Block_Count(170)/value": 100,
+        "Read Cache Disable": 0,
+        "wwn-id": "wwn-0x5001b444a9676988",
+        "SMART/Unknown_Attribute(168)/value": 100,
+        "SMART/Power_Cycle_Count(12)/when_failed": "NEVER",
+        "SMART/Temperature_Celsius(194)/when_failed": "NEVER",
+        "SMART/SATA_CRC_Error_Count(199)/worst": 100,
+        "SMART/Lifetime_Reads_GiB(242)/worst": 253,
+        "SMART/Retired_Block_Count(5)/value": 100,
+        "SMART/Unknown_Attribute(244)/when_failed": "NEVER",
+        "SMART/Unknown_SandForce_Attr(173)/raw": 0,
+        "SMART/SATA_CRC_Error_Count(199)/when_failed": "NEVER",
+        "SMART/Unknown_Attribute(166)/thresh": 0,
+        "SMART/Unknown_Attribute(166)/raw": 0,
+        "SMART/Reserve_Block_Count(170)/thresh": 0,
+        "SMART/Lifetime_Writes_GiB(241)/raw": 12,
+        "SMART/Unknown_Attribute(166)/when_failed": "NEVER",
+        "vendor": "ATA",
+        "id": "ata-SanDisk_SDSSDA240G_172306466211",
+        "SMART/Unknown_Attribute(165)/worst": 100,
+        "SMART/Life_Curve_Status(230)/worst": 100,
+        "SMART/device_model": "SanDisk SDSSDA240G",
+        "SMART/Lifetime_Writes_GiB(241)/when_failed": "NEVER",
+        "Write Cache Enable": 0,
+        "SMART/Unknown_Attribute(244)/thresh": 0,
+        "SMART/Unknown_Attribute(169)/when_failed": "NEVER",
+        "SMART/Available_Reservd_Space(232)/raw": 100,
+        "physical_block_size": 512,
+        "SMART/Program_Fail_Count(171)/value": 100,
+        "SMART/Erase_Fail_Count(172)/thresh": 0,
+        "SMART/SandForce_Internal(234)/worst": 100,
+        "SMART/Erase_Fail_Count(172)/raw": 0,
+        "SMART/Unknown_Attribute(167)/raw": 0,
+        "SMART/SATA_CRC_Error_Count(199)/value": 100,
+        "SMART/Unexpect_Power_Loss_Ct(174)/raw": 30,
+        "SMART/SandForce_Internal(234)/value": 100,
+        "SMART/Available_Reservd_Space(232)/when_failed": "NEVER",
+        "SMART/Temperature_Celsius(194)/thresh": 0,
+        "model": "SanDisk SDSSDA24",
+        "SMART/Unknown_Attribute(165)/raw": 4295229442
+      }
+    },
+    "cpu": {
+      "physical_0": {
+        "physid": 400,
+        "product": "Intel(R) Xeon(R) CPU           X5650  @ 2.67GHz",
+        "enabled_cores": 6,
+        "vendor": "Intel Corp.",
+        "clock": 133000000,
+        "frequency": 2666000000,
+        "version": "Intel(R) Xeon(R) CPU X5650 @ 2.67GHz",
+        "threads": 12,
+        "cores": 6,
+        "flags": "lm fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp x86-64 constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm pcid dca sse4_1 sse4_2 popcnt aes lahf_lm epb tpr_shadow vnmi flexpriority ept vpid dtherm ida arat cpufreq"
+      },
+      "physical_1": {
+        "physid": 406,
+        "product": "Intel(R) Xeon(R) CPU           X5650  @ 2.67GHz",
+        "enabled_cores": 6,
+        "vendor": "Intel Corp.",
+        "clock": 133000000,
+        "frequency": 2666000000,
+        "version": "Intel(R) Xeon(R) CPU X5650 @ 2.67GHz",
+        "threads": 12,
+        "cores": 6,
+        "flags": "lm fpu fpu_exception wp vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp x86-64 constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm pcid dca sse4_1 sse4_2 popcnt aes lahf_lm epb tpr_shadow vnmi flexpriority ept vpid dtherm ida arat cpufreq"
+      },
+      "logical": {
+        "number": 24
+      },b
+      "physical": {
+        "number": 2
+      }
+    }
+  },
+  "all_interfaces": {
+    "enp5s0d1": {
+      "ip": null,
+      "mac": "78:e7:d1:22:1f:0e",
+      "client_id": null,
+      "pxe": false
+    },
+    "enp5s0": {
+      "ip": null,
+      "mac": "78:e7:d1:22:1f:0d",
+      "client_id": null,
+      "pxe": false
+    },
+    "enp4s0f0": {
+      "ip": "172.31.4.1",
+      "mac": "78:e7:d1:22:1f:08",
+      "lldp_processed": {
+        "switch_port_id": "1019",
+        "switch_chassis_id": "e8:e7:32:4e:9b:28"
+      },
+      "client_id": null,
+      "pxe": true
+    },
+    "enp4s0f1": {
+      "ip": "172.31.4.3",
+      "mac": "78:e7:d1:22:1f:09",
+      "lldp_processed": {
+        "switch_capabilities_enabled": [
+          "Bridge",
+          "Router"
+        ],
+        "switch_protocol_identities": [
+          "88cc"
+        ],
+        "switch_port_id": "1019",
+        "switch_port_untagged_vlan_id": 140,
+        "switch_capabilities_support": [
+          "Bridge",
+          "Router"
+        ],
+        "switch_port_protocol_vlan_support": false,
+        "switch_port_protocol_vlan_ids": [
+          0
+        ],
+        "switch_port_vlans": [
+          {
+            "name": "Setup_140-1_QinQ",
+            "id": 140
+          }
+        ],
+        "switch_chassis_id": "e8:e7:32:5f:18:9c",
+        "switch_port_protocol_vlan_enabled": false
+      },
+      "client_id": null,
+      "pxe": false
+    }
+  },
+  "cpus": 24,
+  "boot_interface": "78:e7:d1:22:1f:08",
+  "auto_discovered": true,
+  "memory_mb": 98304,
+  "ipmi_address": "192.168.116.106",
+  "numa_topology": {
+    "nics": [
+      {
+        "numa_node": -1,
+        "name": "enp5s0d1"
+      },
+      {
+        "numa_node": -1,
+        "name": "enp4s0f1"
+      },
+      {
+        "numa_node": -1,
+        "name": "enp4s0f0"
+      },
+      {
+        "numa_node": -1,
+        "name": "enp5s0"
+      }
+    ],
+    "ram": [
+      {
+        "numa_node": 0,
+        "size_kb": 50321176
+      },
+      {
+        "numa_node": 1,
+        "size_kb": 50331644
+      }
+    ],
+    "cpus": [
+      {
+        "numa_node": 0,
+        "thread_siblings": [
+          8,
+          20
+        ],
+        "cpu": 1
+      },
+      {
+        "numa_node": 1,
+        "thread_siblings": [
+          5,
+          17
+        ],
+        "cpu": 2
+      },
+      {
+        "numa_node": 0,
+        "thread_siblings": [
+          0,
+          12
+        ],
+        "cpu": 0
+      },
+      {
+        "numa_node": 1,
+        "thread_siblings": [
+          9,
+          21
+        ],
+        "cpu": 1
+      },
+      {
+        "numa_node": 1,
+        "thread_siblings": [
+          7,
+          19
+        ],
+        "cpu": 10
+      },
+      {
+        "numa_node": 1,
+        "thread_siblings": [
+          3,
+          15
+        ],
+        "cpu": 8
+      },
+      {
+        "numa_node": 0,
+        "thread_siblings": [
+          6,
+          18
+        ],
+        "cpu": 10
+      },
+      {
+        "numa_node": 0,
+        "thread_siblings": [
+          10,
+          22
+        ],
+        "cpu": 9
+      },
+      {
+        "numa_node": 1,
+        "thread_siblings": [
+          1,
+          13
+        ],
+        "cpu": 0
+      },
+      {
+        "numa_node": 0,
+        "thread_siblings": [
+          2,
+          14
+        ],
+        "cpu": 8
+      },
+      {
+        "numa_node": 0,
+        "thread_siblings": [
+          4,
+          16
+        ],
+        "cpu": 2
+      },
+      {
+        "numa_node": 1,
+        "thread_siblings": [
+          11,
+          23
+        ],
+        "cpu": 9
+      }
+    ]
+  },
+  "error": null,
+  "local_gb": 222,
+  "interfaces": {
+    "enp4s0f0": {
+      "ip": "172.31.4.1",
+      "mac": "78:e7:d1:22:1f:08",
+      "lldp_processed": {
+        "switch_port_id": "1019",
+        "switch_chassis_id": "e8:e7:32:4e:9b:28"
+      },
+      "client_id": null,
+      "pxe": true
+    }
+  },
+  "inventory": {
+    "bmc_address": "192.168.116.106",
+    "interfaces": [
+      {
+        "lldp": null,
+        "product": "0x6746",
+        "vendor": "0x15b3",
+        "name": "enp5s0d1",
+        "has_carrier": false,
+        "ipv4_address": null,
+        "biosdevname": null,
+        "client_id": null,
+        "mac_address": "78:e7:d1:22:1f:0e"
+      },
+      {
+        "lldp": [
+          [
+            1,
+            "04e8e7325f189c"
+          ],
+          [
+            2,
+            "0731303139"
+          ],
+          [
+            3,
+            "0078"
+          ],
+          [
+            7,
+            "00140014"
+          ],
+          [
+            127,
+            "0080c201008c"
+          ],
+          [
+            127,
+            "0080c202000000"
+          ],
+          [
+            127,
+            "0080c203008c1053657475705f3134302d315f51696e51"
+          ],
+          [
+            127,
+            "0080c2040288cc"
+          ],
+          [
+            0,
+            ""
+          ]
+        ],
+        "product": "0x10c9",
+        "vendor": "0x8086",
+        "name": "enp4s0f1",
+        "has_carrier": true,
+        "ipv4_address": "172.31.4.3",
+        "biosdevname": null,
+        "client_id": null,
+        "mac_address": "78:e7:d1:22:1f:09"
+      },
+      {
+        "lldp": [
+          [
+            1,
+            "04e8e7324e9b28"
+          ],
+          [
+            2,
+            "0731303139"
+          ],
+          [
+            3,
+            "0078"
+          ],
+          [
+            0,
+            ""
+          ],
+          [
+            0,
+            ""
+          ],
+          [
+            0,
+            ""
+          ],
+          [
+            0,
+            ""
+          ],
+          [
+            0,
+            ""
+          ],
+          [
+            0,
+            ""
+          ],
+          [
+            0,
+            ""
+          ],
+          [
+            0,
+            ""
+          ],
+          [
+            0,
+            ""
+          ],
+          [
+            0,
+            ""
+          ],
+          [
+            0,
+            ""
+          ],
+          [
+            0,
+            ""
+          ],
+          [
+            0,
+            ""
+          ]
+        ],
+        "product": "0x10c9",
+        "vendor": "0x8086",
+        "name": "enp4s0f0",
+        "has_carrier": true,
+        "ipv4_address": "172.31.4.1",
+        "biosdevname": null,
+        "client_id": null,
+        "mac_address": "78:e7:d1:22:1f:08"
+      },
+      {
+        "lldp": [],
+        "product": "0x6746",
+        "vendor": "0x15b3",
+        "name": "enp5s0",
+        "has_carrier": false,
+        "ipv4_address": null,
+        "biosdevname": null,
+        "client_id": null,
+        "mac_address": "78:e7:d1:22:1f:0d"
+      }
+    ],
+    "disks": [
+      {
+        "rotational": false,
+        "vendor": "ATA",
+        "name": "/dev/sda",
+        "wwn_vendor_extension": null,
+        "hctl": "0:0:0:0",
+        "wwn_with_extension": "0x5001b444a9678357",
+        "by_path": "/dev/disk/by-path/pci-0000:00:1f.2-ata-1.0",
+        "model": "SanDisk SDSSDA24",
+        "wwn": "0x5001b444a9678357",
+        "serial": "172321451204",
+        "size": 240057409536
+      },
+      {
+        "rotational": false,
+        "vendor": "ATA",
+        "name": "/dev/sdb",
+        "wwn_vendor_extension": null,
+        "hctl": "1:0:0:0",
+        "wwn_with_extension": "0x5001b444a9676988",
+        "by_path": "/dev/disk/by-path/pci-0000:00:1f.2-ata-2.0",
+        "model": "SanDisk SDSSDA24",
+        "wwn": "0x5001b444a9676988",
+        "serial": "172306466211",
+        "size": 240057409536
+      }
+    ],
+    "boot": {
+      "current_boot_mode": "bios",
+      "pxe_interface": "78:e7:d1:22:1f:08"
+    },
+    "system_vendor": {
+      "serial_number": "CZ3142XKW5",
+      "product_name": "ProLiant SL390s G7 (605078-B21)",
+      "manufacturer": "HP"
+    },
+    "memory": {
+      "physical_mb": 98304,
+      "total": 101369794560
+    },
+    "cpu": {
+      "count": 24,
+      "frequency": "2666.0000",
+      "flags": [
+        "fpu",
+        "vme",
+        "de",
+        "pse",
+        "tsc",
+        "msr",
+        "pae",
+        "mce",
+        "cx8",
+        "apic",
+        "sep",
+        "mtrr",
+        "pge",
+        "mca",
+        "cmov",
+        "pat",
+        "pse36",
+        "clflush",
+        "dts",
+        "acpi",
+        "mmx",
+        "fxsr",
+        "sse",
+        "sse2",
+        "ss",
+        "ht",
+        "tm",
+        "pbe",
+        "syscall",
+        "nx",
+        "pdpe1gb",
+        "rdtscp",
+        "lm",
+        "constant_tsc",
+        "arch_perfmon",
+        "pebs",
+        "bts",
+        "rep_good",
+        "nopl",
+        "xtopology",
+        "nonstop_tsc",
+        "aperfmperf",
+        "pni",
+        "pclmulqdq",
+        "dtes64",
+        "monitor",
+        "ds_cpl",
+        "vmx",
+        "smx",
+        "est",
+        "tm2",
+        "ssse3",
+        "cx16",
+        "xtpr",
+        "pdcm",
+        "pcid",
+        "dca",
+        "sse4_1",
+        "sse4_2",
+        "popcnt",
+        "aes",
+        "lahf_lm",
+        "epb",
+        "tpr_shadow",
+        "vnmi",
+        "flexpriority",
+        "ept",
+        "vpid",
+        "dtherm",
+        "ida",
+        "arat"
+      ],
+      "model_name": "Intel(R) Xeon(R) CPU           X5650  @ 2.67GHz",
+      "architecture": "x86_64"
+    }
+  }
+}
