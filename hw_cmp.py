@@ -22,10 +22,10 @@ TODO: Import common_ironic and use API, instead of files pulled independently
 from __future__ import print_function
 import argparse
 from argparse import RawDescriptionHelpFormatter
-import json
+# import json
 import logging
 from operator import itemgetter
-import os
+# import os
 import pprint
 import re
 import subprocess
@@ -58,7 +58,7 @@ def parse_args():
         'controller and storage.',
         epilog='E.g.: hw_cmp file1.json files2.json\n')
 
-    parser.add_argument('file', type=argparse.FileType('r'), nargs='+')
+    # parser.add_argument('file', type=argparse.FileType('r'), nargs='+')
     parser.add_argument('-f', '--filter', type=str, default='manufacturer',
                         help='Sort filer, E.g: cpus, vendor, nic_num, '
                         'disk_num. Default is "manufacturer"')
@@ -240,35 +240,6 @@ def list_all_keys(args, list):
         sys.exit(1)
 
 
-def grab_data(args):
-    '''Grab data from a server
-
-    openstack baremetal node list
-    openstack baremetal introspection data save server-1 \
-     | jq '.' > server-1.json
-
-    Results in a file of data for every Ironic Server found.
-
-    Return dict of files
-    '''
-    # cmd = "diff <(ssh -n root@10.22.254.34 cat /vms/cloudburst.qcow2.*) <(ssh -n root@10.22.254.101 cat /vms/cloudburst.qcow2)"
-    # output,error = subprocess.Popen(cmd, shell=True, executable="/bin/bash", stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
-
-    cmd = "for fn in `openstack baremetal node list | awk -F '|' \
-    '{print $3}' | grep -v Name`; do openstack baremetal \
-    introspection data save $fn | jq '.' > /tmp/$fn.json; done"
-
-    run_shell(args, cmd)
-    results = []
-    folder = '/tmp'
-
-    for f in os.listdir(folder):
-        if f.endswith('.json'):
-            results.append(f)
-
-    print(results)
-
-
 def analyse_data(args, list):
     '''Gather information from global list to categorize the hardware
 
@@ -314,6 +285,276 @@ def check_key(key, list):
         return False
 
 
+def ihavealist():
+    '''Dict of infor to manipulate'''
+
+    list = []
+
+    list = [
+        {'bmc': u'192.168.117.177', 'cpu_arch': u'x86_64', 'numcpu': '48'},
+        {'bmc': u'192.168.117.177',
+         'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+         'product_vendor': u'HP'},
+        {'bmc': u'192.168.117.177',
+         'disk_model': u'LOGICAL VOLUME',
+         'disk_name': u'/dev/sda',
+         'disk_vendor': u'HP',
+         'numdisk': 2,
+         'rotational': True,
+         'size': 900151926784},
+        {'bmc': u'192.168.117.177',
+         'disk_model': u'LOGICAL VOLUME',
+         'disk_name': u'/dev/sdb',
+         'disk_vendor': u'HP',
+         'numdisk': 2,
+         'rotational': True,
+         'size': 900151926784},
+        {'bmc': u'192.168.117.177', 'name': u'eno49', 'numa_node': 0},
+        {'bmc': u'192.168.117.177', 'name': u'eno50', 'numa_node': 0},
+        {'bmc': u'192.168.117.177', 'name': u'ens1f1', 'numa_node': 0},
+        {'bmc': u'192.168.117.177', 'name': u'ens1f0', 'numa_node': 0},
+        {'biosdevname': u'em49',
+         'bmc': u'192.168.117.177',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.3',
+         'name': u'eno49',
+         'numnic': '4',
+         'product': u'0x10f8'},
+        {'biosdevname': u'em50',
+         'bmc': u'192.168.117.177',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.12',
+         'name': u'eno50',
+         'numnic': '4',
+         'product': u'0x10f8'},
+        {'biosdevname': u'p1p2',
+         'bmc': u'192.168.117.177',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.11',
+         'name': u'ens1f1',
+         'numnic': '4',
+         'product': u'0x10f8'},
+        {'biosdevname': u'p1p1',
+         'bmc': u'192.168.117.177',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.10',
+         'name': u'ens1f0',
+         'numnic': '4',
+         'product': u'0x10f8'},
+        {'bmc': u'192.168.117.178', 'cpu_arch': u'x86_64', 'numcpu': '24'},
+        {'bmc': u'192.168.117.178',
+         'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+         'product_vendor': u'HP'},
+        {'bmc': u'192.168.117.178',
+         'disk_model': u'LOGICAL VOLUME',
+         'disk_name': u'/dev/sda',
+         'disk_vendor': u'HP',
+         'numdisk': 2,
+         'rotational': True,
+         'size': 900151926784},
+        {'bmc': u'192.168.117.178',
+         'disk_model': u'LOGICAL VOLUME',
+         'disk_name': u'/dev/sdb',
+         'disk_vendor': u'HP',
+         'numdisk': 2,
+         'rotational': True,
+         'size': 900151926784},
+        {'bmc': u'192.168.117.178', 'name': u'eno49', 'numa_node': 0},
+        {'bmc': u'192.168.117.178', 'name': u'eno50', 'numa_node': 0},
+        {'bmc': u'192.168.117.178', 'name': u'ens1f1', 'numa_node': 0},
+        {'bmc': u'192.168.117.178', 'name': u'ens1f0', 'numa_node': 0},
+        {'biosdevname': u'em49',
+         'bmc': u'192.168.117.178',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.1',
+         'name': u'eno49',
+         'numnic': '4',
+         'product': u'0x10f8'},
+        {'biosdevname': u'em50',
+         'bmc': u'192.168.117.178',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.4',
+         'name': u'eno50',
+         'numnic': '4',
+         'product': u'0x10f8'},
+        {'biosdevname': u'p1p2',
+         'bmc': u'192.168.117.178',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.6',
+         'name': u'ens1f1',
+         'numnic': '4',
+         'product': u'0x10f8'},
+        {'biosdevname': u'p1p1',
+         'bmc': u'192.168.117.178',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.5',
+         'name': u'ens1f0',
+         'numnic': '4',
+         'product': u'0x10f8'},
+        {'bmc': u'192.168.117.179', 'cpu_arch': u'x86_64', 'numcpu': '48'},
+        {'bmc': u'192.168.117.179',
+         'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+         'product_vendor': u'HP'},
+        {'bmc': u'192.168.117.179',
+         'disk_model': u'LOGICAL VOLUME',
+         'disk_name': u'/dev/sda',
+         'disk_vendor': u'HP',
+         'numdisk': 2,
+         'rotational': True,
+         'size': 900151926784},
+        {'bmc': u'192.168.117.179',
+         'disk_model': u'LOGICAL VOLUME',
+         'disk_name': u'/dev/sdb',
+         'disk_vendor': u'HP',
+         'numdisk': 2,
+         'rotational': True,
+         'size': 900151926784},
+        {'bmc': u'192.168.117.179', 'name': u'eno49', 'numa_node': 0},
+        {'bmc': u'192.168.117.179', 'name': u'eno50', 'numa_node': 0},
+        {'bmc': u'192.168.117.179', 'name': u'ens1f1', 'numa_node': 0},
+        {'bmc': u'192.168.117.179', 'name': u'ens1f0', 'numa_node': 0},
+        {'biosdevname': u'em49',
+         'bmc': u'192.168.117.179',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.2',
+         'name': u'eno49',
+         'numnic': '4',
+         'product': u'0x10f8'},
+        {'biosdevname': u'em50',
+         'bmc': u'192.168.117.179',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.9',
+         'name': u'eno50',
+         'numnic': '4',
+         'product': u'0x10f8'},
+        {'biosdevname': u'p1p2',
+         'bmc': u'192.168.117.179',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.8',
+         'name': u'ens1f1',
+         'numnic': '4',
+         'product': u'0x10f8'},
+        {'biosdevname': u'p1p1',
+         'bmc': u'192.168.117.179',
+         'client_id': None,
+         'has_carrier': True,
+         'ipv4_address': u'172.31.4.7',
+         'name': u'ens1f0',
+         'numnic': '4',
+         'product': u'0x10f8'}
+    ]
+    return(list)
+
+
+def only_group_data(list):
+    '''Return only data relevant to the groups'''
+
+    only_group_data = []
+    for dict in list:   # For each dict
+        for key, value in dict.iteritems():
+            if key == 'product_name' or key == 'numdisk' or key == 'numnic':
+                only_group_data.append(dict)
+    return(only_group_data)
+
+
+def uniquify_list_dict(list):
+    '''Take a list of dicts and remove all but unique dicts'''
+
+    seen = set()
+    unique_list = []
+
+    # pp.pprint(list)
+    list.sort()
+
+    for d in list:
+        t = tuple(d.items())
+        if t not in seen:
+            seen.add(t)
+            unique_list.append(d)
+            logger.debug('Unique list: \n {}'
+                         .format(unique_list))
+    return(unique_list)
+
+
+def unique(list1):
+    '''Python program to get unique values from list
+    using traversal'''
+
+    # intialize a null list
+    unique_list = []
+    unique_set = []
+
+    # traverse for all elements
+    for x in list1:
+        # check if exists in unique_list or not
+        if x not in unique_list:
+            unique_list.append(x)
+    # print list
+    for x in unique_list:
+        unique_set.append(x)
+        # print(x,)
+    return(unique_set)
+
+
+def create_groups(list):
+    '''create groups'''
+
+    group_keys = []
+
+    product_name = {}
+    bmc_list = []
+    for dict in list:
+        for key, value in dict.iteritems():
+            if key == 'product_name':
+                product_name[key] = value
+                bmc_list.append(dict['bmc'])
+                product_name['bmc'] = unique(bmc_list)
+    group_keys.append(product_name)
+
+    product_vendor = {}
+    bmc_list = []
+    for dict in list:
+        for key, value in dict.iteritems():
+            if key == 'product_vendor':
+                product_vendor[key] = value
+                bmc_list.append(dict['bmc'])
+                product_vendor['bmc'] = unique(bmc_list)
+    group_keys.append(product_vendor)
+
+    numnic = {}
+    bmc_list = []
+    for dict in list:
+        for key, value in dict.iteritems():
+            if key == 'numnic':
+                numnic[key] = value
+                bmc_list.append(dict['bmc'])
+                numnic['bmc'] = unique(bmc_list)
+    group_keys.append(numnic)
+
+    numdisk = {}
+    bmc_list = []
+    for dict in list:
+        for key, value in dict.iteritems():
+            if key == 'numdisk':
+                numdisk[key] = value
+                bmc_list.append(dict['bmc'])
+                numdisk['bmc'] = unique(bmc_list)
+    group_keys.append(numdisk)
+
+    pp.pprint(group_keys)
+
+
 def main():
     '''Main function.'''
 
@@ -322,139 +563,22 @@ def main():
     set_logging()
     logger.setLevel(level=args.verbose)
 
-    # Calculate number of lists
-    total_list_num = 0
-    for file in args.file:
-        total_list_num += 1
-
-    # grab_data(args)
-    # sys.exit(1)
-
     # Store a list of dictionaries - each dict representing one inputed file
-    global_list = []
+    global_list = ihavealist()
 
     try:
-        for file in args.file:
-            d = {}
-            logger.debug('FILE: %s' % file.name)
-            d['file_name'] = '%s' % file.name
-            json_str = file.read()
-            data = json.loads(json_str)
+        print('RAW DATA:')
+        # pp.pprint(global_list)
 
-            # Based on your input string, data is now a
-            # dictionary that contains other dictionaries.
-            # You can just navigate up the dictionaries like so:
+        print('UNIQUE DATA:')
+        unique_data = uniquify_list_dict(global_list)
+        # pp.pprint(unique_data)
 
-            logger.debug('High Level')
-            # cpu_arch
-            node = data['cpu_arch']
-            logger.debug('  %s: %s' % ('cpu_arch', str(node)))
-            d['cpu_arch'] = str(node)
+        ogd = only_group_data(unique_data)
+        print('ONLY GROUP DATA')
+        # pp.pprint(ogd)
 
-            # cpu
-            node = data['cpus']
-            logger.debug('  %s: %s' % ('cpus', str(node)))
-            d['cpus'] = str(node)
-
-            logger.debug('root disk')
-            # root_disk : vendor
-            node = data['root_disk']['vendor']
-            logger.debug('  %s: %s' % ('vendor', str(node)))
-            d['vendor'] = str(node)
-
-            # root_disk : name
-            node = data['root_disk']['name']
-            logger.debug('  %s: %s' % ('name', str(node)))
-            d['name'] = str(node)
-
-            # root_disk : size
-            node = data['root_disk']['size']
-            logger.debug('  %s: %s' % ('size', str(node)))
-            d['size'] = str(node)
-
-            # Inventory Disks - total
-            i = 0
-            for x in data['inventory']['disks']:
-                node = x['vendor']
-                logger.debug('  %s:%s: %s' % (i, 'disk vendor', str(node)))
-                i += 1
-            d['disk_num'] = i
-
-            # Inventory memory
-            node = data['inventory']['memory']['total']
-            logger.debug('  %s: %s' % ('memory', str(node)))
-            d['memory'] = str(node)
-
-            # Numa
-            i = 0
-            if check_key('numa_topology', data):
-                for x in data['numa_topology']['nics']:
-                    node1 = x['numa_node']
-                    logger.debug('  %s:%s: %s' % (i, 'numa_node', str(node1)))
-                    nn = '%s-numa-' % i + str(node1)
-                    node2 = x['name']
-                    nnc = str(node2) + '-%s' % i
-                    logger.debug('  %s:%s: %s' % (i, 'name', str(node2)))
-                    d[nn] = nnc
-                    i += 1
-
-            # Inventory: Interfaces name
-            logger.debug('Inventory')
-            node = data['inventory']['bmc_address']
-            logger.debug('  %s: %s' % ('bmc_address', str(node)))
-            d['bmc_address'] = str(node)
-
-            i = 0
-            for x in data['inventory']['interfaces']:
-                node = x['name']
-                logger.debug('  %s: %s' % ('nic_name', str(node)))
-                d['%s-nic_name' % i] = str(node)
-
-                node = x['product']
-                logger.debug('    %s: %s' % ('product', str(node)))
-                d['%s-product' % i] = str(node)
-
-                node = x['vendor']
-                logger.debug('    %s: %s' % ('vendor', str(node)))
-                d['%s-vendor' % i] = str(node)
-
-                node = x['has_carrier']
-                logger.debug('    %s: %s' % ('has_carrier', str(node)))
-                d['%s-has_carrier' % i] = str(node)
-
-                node = x['ipv4_address']
-                logger.debug('    %s: %s' % ('ipv4_address', str(node)))
-                d['%s-ipv4_address' % i] = str(node)
-
-                if check_key('biosdevname', x):
-                    node = x['biosdevname']
-                    logger.debug('    %s: %s' % ('biosdevname', str(node)))
-                    d['%s-biosdevname' % i] = str(node)
-
-                if check_key('client_id', x):
-                    node = x['client_id']
-                    logger.debug('    %s: %s' % ('client_id', str(node)))
-                    d['%s-client_id' % i] = str(node)
-
-                i += 1
-
-            d['nic_num'] = i
-
-            # Inventory: Interfaces System Vendor
-            node = data['inventory']['system_vendor']['product_name']
-            logger.debug('  %s: %s' % ('product_name', str(node)))
-            d['product_name'] = str(node)
-
-            node = data['inventory']['system_vendor']['manufacturer']
-            logger.debug('  %s: %s' % ('manufacturer', str(node)))
-            d['manufacturer'] = str(node)
-
-            global_list.append(d)
-
-        # This only prints if verbose is on
-        print_global_list(args, global_list, total_list_num)
-
-        analyse_data(args, global_list)
+        create_groups(ogd)
 
     except Exception:
         print('Exception caught:')
