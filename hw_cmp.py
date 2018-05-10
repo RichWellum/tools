@@ -30,6 +30,7 @@ import pprint
 import re
 import subprocess
 import sys
+# from collections import defaultdict
 
 logger = logging.getLogger(__name__)
 
@@ -561,6 +562,44 @@ def unique(list1):
     return(unique_set)
 
 
+def create_tags(my_list):
+    '''Create unique tags per each dict'''
+
+    tag = 0
+    tag_list = {}
+
+    for dict in my_list:
+        for item in dict.iteritems():
+            tag_list['tagme'] = tag
+            item[1].append(tag_list)
+            tag_list = {}
+            tag += 1
+
+    return(my_list)
+
+
+def gather_tags(my_list):
+    '''Create unique tags per each dict'''
+
+    g_t = []
+    tag = 0
+
+    for dict in my_list:
+        for item in dict.iteritems():
+            for x in item:
+                # pp.pprint(x)
+                g_t.append(x)
+            tag += 1
+
+    print('DEBUG Group List')
+    pp.pprint(my_list)
+
+    print('DEBUG tag List')
+    pp.pprint(g_t)
+
+    return(g_t)
+
+
 def create_groups(list):
     '''create groups'''
 
@@ -612,7 +651,7 @@ def create_groups(list):
                     numdisk[key_] = [dict['bmc']]
     group_keys.append(numdisk)
 
-    pp.pprint(group_keys)
+    return(group_keys)
 
 
 def main():
@@ -627,18 +666,25 @@ def main():
     global_list = ihavealist()
 
     try:
-        print('RAW DATA:')
+        # print('RAW DATA:')
         # pp.pprint(global_list)
 
-        print('UNIQUE DATA:')
+        # print('UNIQUE DATA:')
         unique_data = uniquify_list_dict(global_list)
         # pp.pprint(unique_data)
 
         ogd = only_group_data(unique_data)
-        print('ONLY GROUP DATA')
+        # print('ONLY GROUP DATA')
         # pp.pprint(ogd)
 
-        create_groups(ogd)
+        groups = create_groups(ogd)
+        # pp.pprint(groups)
+
+        tags = create_tags(groups)
+        # pp.pprint(tags)
+
+        g_tags = gather_tags(tags)
+        # pp.pprint(g_tags)
 
     except Exception:
         print('Exception caught:')

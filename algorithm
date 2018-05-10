@@ -1,5 +1,5 @@
 ONLY GROUP DATA
-[ { u'product_name_ProLiant BL460c Gen33 (727021-B21)': [u'192.168.117.176'], T1
+[ { u'product_name_ProLiant BL460c Gen33 (727021-B21)': [u'192.168.117.176'], tag: T1,
     u'product_name_ProLiant BL460c Gen9 (727021-B21)': [ u'192.168.117.177', T2
                                                          u'192.168.117.178', T2
                                                          u'192.168.117.179']}, T2
