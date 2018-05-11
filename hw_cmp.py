@@ -30,7 +30,6 @@ import pprint
 import re
 import subprocess
 import sys
-# from collections import defaultdict
 
 logger = logging.getLogger(__name__)
 
@@ -579,25 +578,79 @@ def create_tags(my_list):
 
 
 def gather_tags(my_list):
-    '''Create unique tags per each dict'''
+    '''Create unique tags per each dict
 
-    g_t = []
-    tag = 0
+     [{ u'product_name_Gen33 (727021-B21)':
+                                         [ u'192.168.117.184',
+                                         { 'tagme': 0}],
+        u'product_name_Gen9 (727021-B21)': [ u'192.168.117.177',
+                                         u'192.168.117.178',
+                                         u'192.168.117.179',
+                                         { 'tagme': 1}]},
 
-    for dict in my_list:
-        for item in dict.iteritems():
-            for x in item:
-                # pp.pprint(x)
-                g_t.append(x)
-            tag += 1
+      { u'product_vendor_HP': [ u'192.168.117.177',
+                            u'192.168.117.178',
+                            u'192.168.117.179',
+                            { 'tagme': 2}],
+        u'product_vendor_IBM': [u'192.168.117.184', { 'tagme': 3}]},
 
-    print('DEBUG Group List')
-    pp.pprint(my_list)
+      { 'numnic_10': [u'192.168.117.178', { 'tagme': 5}],
+        'numnic_4': [u'192.168.117.177', u'192.168.117.179', { 'tagme': 6}],
+        'numnic_8': [u'192.168.117.184', { 'tagme': 4}]},
 
-    print('DEBUG tag List')
-    pp.pprint(g_t)
+      { 'numdisk_2': [u'192.168.117.177', u'192.168.117.178', { 'tagme': 9}],
+        'numdisk_3': [u'192.168.117.179', { 'tagme': 8}],
+        'numdisk_5': [u'192.168.117.184', { 'tagme': 7}]}]
 
-    return(g_t)
+    What is a group?
+
+    184: Gen33, IBM, numnic8,  numdisk5
+    177: Gen9,  HP,  numnic4,  numdisk2
+    178: Gen9,  HP,  numnic10, numdisk2
+    179: Gen9,  HP,  numnic4,  numdisk3
+
+    Could end up with multiple groups if two BMC's have identical
+    values - hence need to squash them
+'''
+
+    # Run through my_list and create a list of BMCs
+    bmc_list = []
+    for i in my_list:
+        for d in my_list:  # d = product, vendor, numnic, numdisk
+            for key, value in d.iteritems():
+                for item in value:
+                    if type(item) == dict:
+                        for el in value:
+                            if type(el) != dict:
+                                bmc_list.append(el)
+    bmc_list_u = unique(bmc_list)
+
+    # Now run through my_list and pick out each key that is
+    # associated with a BMC in bmc_list_u
+
+    temp_prop_list = []
+    # Create a list of dicts per BMC
+    new_dict = {}
+    for bmc in bmc_list_u:
+        new_dict[bmc] = []
+
+    for bmc in bmc_list_u:
+        for i in my_list:
+            for d in my_list:  # d = product, vendor, numnic, numdisk
+                for key, value in d.iteritems():
+                    for item in value:
+                        if type(item) == dict:
+                            for el in value:
+                                if type(el) != dict and bmc == el:
+                                    # print('DEBUG999 BMC=%s, '
+                                    #       'Property=%s' % (bmc, key))
+                                    temp_prop_list.append(key)
+        prop_list_u = set(temp_prop_list)
+        temp_prop_list = []
+        new_dict[bmc].append(prop_list_u)
+
+    # pp.pprint(new_dict)
+    return(new_dict)
 
 
 def create_groups(list):
@@ -684,7 +737,7 @@ def main():
         # pp.pprint(tags)
 
         g_tags = gather_tags(tags)
-        # pp.pprint(g_tags)
+        pp.pprint(g_tags)
 
     except Exception:
         print('Exception caught:')

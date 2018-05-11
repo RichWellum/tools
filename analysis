@@ -1,0 +1,631 @@
+NIQUE DATA:
+[   {   'bmc': u'192.168.117.177', 'cpu_arch': u'x86_64', 'numcpu': '48'},
+    {   'bmc': u'192.168.117.177', 'name': u'eno49', 'numa_node': 0},
+    {   'bmc': u'192.168.117.177', 'name': u'eno50', 'numa_node': 0},
+    {   'bmc': u'192.168.117.177', 'name': u'ens1f0', 'numa_node': 0},
+    {   'bmc': u'192.168.117.177', 'name': u'ens1f1', 'numa_node': 0},
+    {   'bmc': u'192.168.117.177',
+        'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+        'product_vendor': u'HP'},
+    {   'bmc': u'192.168.117.178', 'cpu_arch': u'x86_64', 'numcpu': '24'},
+    {   'bmc': u'192.168.117.178', 'name': u'eno49', 'numa_node': 0},
+    {   'bmc': u'192.168.117.178', 'name': u'eno50', 'numa_node': 0},
+    {   'bmc': u'192.168.117.178', 'name': u'ens1f0', 'numa_node': 0},
+    {   'bmc': u'192.168.117.178', 'name': u'ens1f1', 'numa_node': 0},
+    {   'bmc': u'192.168.117.178',
+        'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+        'product_vendor': u'HP'},
+    {   'bmc': u'192.168.117.179', 'cpu_arch': u'x86_64', 'numcpu': '48'},
+    {   'bmc': u'192.168.117.179', 'name': u'eno49', 'numa_node': 0},
+    {   'bmc': u'192.168.117.179', 'name': u'eno50', 'numa_node': 0},
+    {   'bmc': u'192.168.117.179', 'name': u'ens1f0', 'numa_node': 0},
+    {   'bmc': u'192.168.117.179', 'name': u'ens1f1', 'numa_node': 0},
+    {   'bmc': u'192.168.117.179',
+        'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+        'product_vendor': u'HP'},
+    {   'bmc': u'192.168.117.177',
+        'disk_model': u'LOGICAL VOLUME',
+        'disk_name': u'/dev/sda',
+        'disk_vendor': u'HP',
+        'numdisk': 2,
+        'rotational': True,
+        'size': 900151926784},
+    {   'bmc': u'192.168.117.177',
+        'disk_model': u'LOGICAL VOLUME',
+        'disk_name': u'/dev/sdb',
+        'disk_vendor': u'HP',
+        'numdisk': 2,
+        'rotational': True,
+        'size': 900151926784},
+    {   'bmc': u'192.168.117.178',
+        'disk_model': u'LOGICAL VOLUME',
+        'disk_name': u'/dev/sda',
+        'disk_vendor': u'HP',
+        'numdisk': 2,
+        'rotational': True,
+        'size': 900151926784},
+    {   'bmc': u'192.168.117.178',
+        'disk_model': u'LOGICAL VOLUME',
+        'disk_name': u'/dev/sdb',
+        'disk_vendor': u'HP',
+        'numdisk': 2,
+        'rotational': True,
+        'size': 900151926784},
+    {   'bmc': u'192.168.117.179',
+        'disk_model': u'LOGICAL VOLUME',
+        'disk_name': u'/dev/sda',
+        'disk_vendor': u'HP',
+        'numdisk': 2,
+        'rotational': True,
+        'size': 900151926784},
+    {   'bmc': u'192.168.117.179',
+        'disk_model': u'LOGICAL VOLUME',
+        'disk_name': u'/dev/sdb',
+        'disk_vendor': u'HP',
+        'numdisk': 2,
+        'rotational': True,
+        'size': 900151926784},
+    {   'biosdevname': u'em49',
+        'bmc': u'192.168.117.177',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.3',
+        'name': u'eno49',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'em49',
+        'bmc': u'192.168.117.178',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.1',
+        'name': u'eno49',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'em49',
+        'bmc': u'192.168.117.179',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.2',
+        'name': u'eno49',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'em50',
+        'bmc': u'192.168.117.177',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.12',
+        'name': u'eno50',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'em50',
+        'bmc': u'192.168.117.178',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.4',
+        'name': u'eno50',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'em50',
+        'bmc': u'192.168.117.179',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.9',
+        'name': u'eno50',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'p1p1',
+        'bmc': u'192.168.117.177',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.10',
+        'name': u'ens1f0',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'p1p1',
+        'bmc': u'192.168.117.178',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.5',
+        'name': u'ens1f0',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'p1p1',
+        'bmc': u'192.168.117.179',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.7',
+        'name': u'ens1f0',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'p1p2',
+        'bmc': u'192.168.117.177',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.11',
+        'name': u'ens1f1',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'p1p2',
+        'bmc': u'192.168.117.178',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.6',
+        'name': u'ens1f1',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'p1p2',
+        'bmc': u'192.168.117.179',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.8',
+        'name': u'ens1f1',
+        'numnic': '4',
+        'product': u'0x10f8'}]
+ONLY GROUP DATA
+[   {   'bmc': u'192.168.117.177',
+        'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+        'product_vendor': u'HP'},
+    {   'bmc': u'192.168.117.177',
+        'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+        'product_vendor': u'HP'},
+    {   'bmc': u'192.168.117.178',
+        'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+        'product_vendor': u'HP'},
+    {   'bmc': u'192.168.117.178',
+        'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+        'product_vendor': u'HP'},
+    {   'bmc': u'192.168.117.179',
+        'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+        'product_vendor': u'HP'},
+    {   'bmc': u'192.168.117.179',
+        'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+        'product_vendor': u'HP'},
+    {   'bmc': u'192.168.117.177',
+        'disk_model': u'LOGICAL VOLUME',
+        'disk_name': u'/dev/sda',
+        'disk_vendor': u'HP',
+        'numdisk': 2,
+        'rotational': True,
+        'size': 900151926784},
+    {   'bmc': u'192.168.117.177',
+        'disk_model': u'LOGICAL VOLUME',
+        'disk_name': u'/dev/sdb',
+        'disk_vendor': u'HP',
+        'numdisk': 2,
+        'rotational': True,
+        'size': 900151926784},
+    {   'bmc': u'192.168.117.178',
+        'disk_model': u'LOGICAL VOLUME',
+        'disk_name': u'/dev/sda',
+        'disk_vendor': u'HP',
+        'numdisk': 2,
+        'rotational': True,
+        'size': 900151926784},
+    {   'bmc': u'192.168.117.178',
+        'disk_model': u'LOGICAL VOLUME',
+        'disk_name': u'/dev/sdb',
+        'disk_vendor': u'HP',
+        'numdisk': 2,
+        'rotational': True,
+        'size': 900151926784},
+    {   'bmc': u'192.168.117.179',
+        'disk_model': u'LOGICAL VOLUME',
+        'disk_name': u'/dev/sda',
+        'disk_vendor': u'HP',
+        'numdisk': 2,
+        'rotational': True,
+        'size': 900151926784},
+    {   'bmc': u'192.168.117.179',
+        'disk_model': u'LOGICAL VOLUME',
+        'disk_name': u'/dev/sdb',
+        'disk_vendor': u'HP',
+        'numdisk': 2,
+        'rotational': True,
+        'size': 900151926784},
+    {   'biosdevname': u'em49',
+        'bmc': u'192.168.117.177',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.3',
+        'name': u'eno49',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'em49',
+        'bmc': u'192.168.117.178',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.1',
+        'name': u'eno49',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'em49',
+        'bmc': u'192.168.117.179',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.2',
+        'name': u'eno49',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'em50',
+        'bmc': u'192.168.117.177',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.12',
+        'name': u'eno50',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'em50',
+        'bmc': u'192.168.117.178',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.4',
+        'name': u'eno50',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'em50',
+        'bmc': u'192.168.117.179',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.9',
+        'name': u'eno50',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'p1p1',
+        'bmc': u'192.168.117.177',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.10',
+        'name': u'ens1f0',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'p1p1',
+        'bmc': u'192.168.117.178',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.5',
+        'name': u'ens1f0',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'p1p1',
+        'bmc': u'192.168.117.179',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.7',
+        'name': u'ens1f0',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'p1p2',
+        'bmc': u'192.168.117.177',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.11',
+        'name': u'ens1f1',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'p1p2',
+        'bmc': u'192.168.117.178',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.6',
+        'name': u'ens1f1',
+        'numnic': '4',
+        'product': u'0x10f8'},
+    {   'biosdevname': u'p1p2',
+        'bmc': u'192.168.117.179',
+        'client_id': None,
+        'has_carrier': True,
+        'ipv4_address': u'172.31.4.8',
+        'name': u'ens1f1',
+        'numnic': '4',
+        'product': u'0x10f8'}]
+ richardwellum@rkw  ~/Dropbo
+
+
+
+
+names = ['mark', 'henry', 'matthew', 'paul',
+         'luke', 'robert', 'joseph', 'carl', 'michael']
+
+d = {}
+for name in names:
+    key = len(name)
+    if key not in d:
+        d[key] = []
+    d[key].append(name)
+
+
+
+   {   'bmc': [   u'192.168.117.177',
+                   u'192.168.117.178',
+                   u'192.168.117.179',
+                   u'192.168.117.184'],
+        'product_name': [   u'ProLiant BL460c Gen9 (727021-B21)',
+                            u'ProLiant BL460c Gen33 (727021-B21)']},
+
+
+
+
+[   {   'product_name': [   u'ProLiant BL460c Gen9 (727021-B21)',
+                            [u'192.168.117.177', u'192.168.117.184'],
+                            u'ProLiant BL460c Gen33 (727021-B21)']}]
+
+{ 'product_name':'ProLiant BL460c Gen33', bmc_list}
+
+
+{'bmc': u'192.168.117.177',
+         'product_name': u'ProLiant BL460c Gen9 (727021-B21)',
+         'product_vendor': u'HP'},
+
+
+
+
+
+   {   u'ProLiant BL460c Gen33 (727021-B21)': [   u'192.168.117.177',
+                                                   u'192.168.117.184'],
+        u'ProLiant BL460c Gen9 (727021-B21)': [   u'192.168.117.177',
+                                                  u'192.168.117.184']}]
+
+
+DEBUG: value=ProLiant BL460c Gen9 (727021-B21) : bmc=192.168.117.177
+DEBUG: value=ProLiant BL460c Gen9 (727021-B21) : bmc=192.168.117.178
+DEBUG: value=ProLiant BL460c Gen9 (727021-B21) : bmc=192.168.117.179
+DEBUG: value=ProLiant BL460c Gen33 (727021-B21) : bmc=192.168.117.184
+[   {   u'ProLiant BL460c Gen33 (727021-B21)': [   u'192.168.117.177',
+                                                   u'192.168.117.178',
+                                                   u'192.168.117.179',
+                                                   u'192.168.117.184'],
+        u'ProLiant BL460c Gen9 (727021-B21)': [   u'192.168.117.177',
+                                                  u'192.168.117.178',
+                                                  u'192.168.117.179',
+                                                  u'192.168.117.184']}]
+
+
+years_dict = dict()
+
+for line in list:
+    if line[0] in years_dict:
+        # append the new number to the existing array at this slot
+        years_dict[line[0]].append(line[1])
+    else:
+        # create a new array in this slot
+        years_dict[line[0]] = [line[1]]
+What you should end up with in years_dict is a dictionary that looks like the following:
+
+{
+    "2010": [2],
+    "2009": [4,7],
+    "1989": [8]
+}
+
+
+Chain a group
+-------------
+[ { u'product_name_ProLiant BL460c Gen33 (727021-B21)': [u'192.168.117.184'],
+    u'product_name_ProLiant BL460c Gen9 (727021-B21)': [ u'192.168.117.177',
+                                                         u'192.168.117.178',
+                                                         u'192.168.117.179']},
+  { u'product_vendor_HP': [ u'192.168.117.177',
+                            u'192.168.117.178',
+                            u'192.168.117.179'],
+    u'product_vendor_IBM': [u'192.168.117.184']},
+  { 'numnic_4': [u'192.168.117.177', u'192.168.117.178', u'192.168.117.179'],
+    'numnic_8': [u'192.168.117.184']},
+  { 'numdisk_2': [u'192.168.117.177', u'192.168.117.178', u'192.168.117.179'],
+    'numdisk_4': [u'192.168.117.184']}]
+
+product_name_ProLiant BL460c Gen33 (727021-B21)   product_name_ProLiant BL460c Gen9 (727021-B21)
+
+
+
+[ { u'product_name_ProLiant BL460c Gen33 (727021-B21)': [u'192.168.117.184'],
+    u'product_name_ProLiant BL460c Gen9 (727021-B21)': [ u'192.168.117.177',
+                                                         u'192.168.117.178',
+                                                         u'192.168.117.179']},
+  { u'product_vendor_HP': [ u'192.168.117.177',
+                            u'192.168.117.178',
+                            u'192.168.117.179'],
+    u'product_vendor_IBM': [u'192.168.117.184']},
+  { 'numnic_10': [u'192.168.117.178'],
+    'numnic_4': [u'192.168.117.177', u'192.168.117.179'],
+    'numnic_8': [u'192.168.117.184']},
+  { 'numdisk_2': [u'192.168.117.177', u'192.168.117.178'],
+    'numdisk_3': [u'192.168.117.179'],
+
+ONLY GROUP DATA
+[ { u'product_name_ProLiant BL460c Gen33 (727021-B21)': [u'192.168.117.176'], T1
+    u'product_name_ProLiant BL460c Gen9 (727021-B21)': [ u'192.168.117.177', T2
+                                                         u'192.168.117.178', T2
+                                                         u'192.168.117.179']}, T2
+
+  { u'product_vendor_HP': [ u'192.168.117.177',
+                            u'192.168.117.178',
+                            u'192.168.117.179'],
+    u'product_vendor_IBM': [u'192.168.117.176']},
+
+  { 'numnic_10': [u'192.168.117.178'], T3
+    'numnic_4': [u'192.168.117.177', u'192.168.117.179'], T4
+    'numnic_8': [u'192.168.117.176']}, T5
+
+  { 'numdisk_2': [u'192.168.117.177', u'192.168.117.178'], T6
+    'numdisk_3': [u'192.168.117.179'], T7
+    'numdisk_5': [u'192.168.117.176']}] T8
+
+
+
+177 = T2,T4,T6 = Gen9, numnic4, numdisk2
+
+Product +        Vendor + numnic + numdisk
+gen9(7/8/9)      HP       10(8)        2(7/8)
+                          4(7/9)       3(9)
+gen33(6)         IBM      8(6)         5(8)
+
+
+i=0
+new_list=[]
+while i<len(data_list):
+  new_list.append(data_list[i:i+3])
+  i+=3
+
+from collections import defaultdict
+
+x = defaultdict(list)
+x['Key1'].append((1.000,2.003,3.0029))
+
+
+>>> l = ('numdisk_5', [u'192.168.117.184', {'tagme': 7}])
+>>> l[0]
+'numdisk_5'
+>>> l[1]
+[u'192.168.117.184', {'tagme': 7}]
+>>> l[1][2]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+>>> l[3]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: tuple index out of range
+>>> l[2]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: tuple index out of range
+>>> l[1]
+[u'192.168.117.184', {'tagme': 7}]
+>>> l[1][1]
+{'tagme': 7}
+>>> l[1][1].key
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'dict' object has no attribute 'key'
+>>> l[1][1].get('tagme')
+
+
+7
+
+g=product_name_ProLiant BL460c Gen33 (727021-B21), h=[u'192.168.117.184', {'tagme': 0}]
+
+
+
+
+
+
+DEBUG START
+tag=9
+value=[u'192.168.117.177', u'192.168.117.178', {'tagme': 9}]
+item={'tagme': 9}
+key=numdisk_2
+DEBUG END
+
+DEBUG START
+Tag=7
+BMCs=[u'192.168.117.184', {'tagme': 7}]
+Group property=numdisk_5
+DEBUG END
+
+
+        d[key] = [d[key],val]
+
+
+
+DEBUG START
+Tag=9 : item['tagme']
+BMCs=[u'192.168.117.177', u'192.168.117.178', {'tagme': 9}] : value
+Group property=numdisk_2 : key
+DEBUG END
+
+tagged[9]
+
+>>> for item in BMCs:
+...     if type(item) != dict:
+...         print item
+...
+192.168.117.177
+192.168.117.178
+>>>
+
+
+graph['A'].append('Z')
+
+
+from collections import defaultdict
+
+d = defaultdict(list)
+d['x'] = [1,2,3,4]
+d['y'] = [5,6,7,8]
+# d is {'y': [5, 6, 7, 8], 'x': [1, 2, 3, 4]}
+
+d['z'].append(10)
+d['x'].append(9)
+print d
+# d is now {'y': [5, 6, 7, 8], 'x': [1, 2, 3, 4, 9], 'z': [10]}
+
+
+DEBUG START
+Tag=9
+BMCs=[u'192.168.117.177', u'192.168.117.178']
+Property=numdisk_2
+DEBUG END
+
+{9: [[BMCs], Propery1, Property2]}
+
+[[u'192.168.117.177', u'192.168.117.179'], 'numnic_4']
+
+
+>>> for key, value in d.items():
+...   print key, value
+
+*******
+ { u'product_name_ProLiant BL460c Gen33 (727021-B21)': [ u'192.168.117.184',
+                                                          { 'tagme': 0}],
+    u'product_name_ProLiant BL460c Gen9 (727021-B21)': [ u'192.168.117.177',
+                                                         u'192.168.117.178',
+                                                         u'192.168.117.179',
+                                                         { 'tagme': 1}]},
+
+  { u'product_vendor_HP': [ u'192.168.117.177',
+                            u'192.168.117.178',
+                            u'192.168.117.179',
+                            { 'tagme': 2}],
+    u'product_vendor_IBM': [u'192.168.117.184', { 'tagme': 3}]},
+
+  { 'numnic_10': [u'192.168.117.178', { 'tagme': 5}],
+    'numnic_4': [u'192.168.117.177', u'192.168.117.179', { 'tagme': 6}],
+    'numnic_8': [u'192.168.117.184', { 'tagme': 4}]},
+
+  { 'numdisk_2': [u'192.168.117.177', u'192.168.117.178', { 'tagme': 9}],
+    'numdisk_3': [u'192.168.117.179', { 'tagme': 8}],
+    'numdisk_5': [u'192.168.117.184', { 'tagme': 7}]}]
+*******
+
+Each tag represents a unique property attached to a set of bmcs
+
+Create bmc list (177,178,179,184)
+
+for each bmc, find the keys - that represents one group
+
+or:
+
+What is a group?
+
+184: Gen33, IBM, numnic8,  numdisk5
+177: Gen9,  HP,  numnic4,  numdisk2
+178: Gen9,  HP,  numnic10, numdisk2
+179: Gen9,  HP,  numnic4,  numdisk3
+
+Could end up with multiple groups if two BMC's have identical values - hence
+need to squash them
+
+
+y = {}
+for a in range (0,16777216):
+    y[a] = []
+
+
+[dict(t) for t in set([tuple(d.items()) for d in l])]
+The strategy is to convert the list of dictionaries to a list of tuples where the tuples contain the items of the dictionary. Since the tuples can be hashed, you can remove duplicates using set and, after that, re-create the dictionaries from tuples with dict.
+
+where:
+
+l is the original list
+d is one of the dictionaries in the list
+t is one of the tuples created from a dictionary
